@@ -20,7 +20,7 @@ module.exports = {
 	entry: path.resolve(__dirname, 'index.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'velvet.min.js',
+		filename: 'umd.min.js',
 		library: 'adLoad',
 		libraryTarget: 'umd'
 	},
@@ -37,7 +37,7 @@ module.exports = {
 			// Rollup + Babel loader to generate smaller bundle, use one entry point
 			{
 				test: request => {
-					const isAdLoadIndex = request.includes('ad-load') && request.endsWith('index.js')
+					const isAdLoadIndex = request.includes('ad-velvet') && request.endsWith('index.js')
 					return isAdLoadIndex
 				},
 				use: [

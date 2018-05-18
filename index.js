@@ -1,13 +1,13 @@
-import * as DataManager from './lib/DataManager'
-import * as Capture from './lib/Capture'
-import * as EventController from './lib/EventController.js'
-import * as VelvetEvents from './lib/VelvetEvents.js'
+import * as DM from './lib/data-manager'
+import * as C from './lib/capture'
+import * as EC from './lib/event-controller.js'
+import * as E from './lib/events.js'
 import G from './lib/get.js'
 
-export const init = DataManager.init
-export const isPreviewLocation = DataManager.isPreviewLocation
-export const addEventListener = EventController.add
-export const removeEventListener = EventController.remove
-export const events = VelvetEvents
-export const capture = Capture
+export const init = DM.init
+export const isPreviewLocation = DM.isPreviewLocation
+export const addEventListener = EC.add
+export const removeEventListener = EC.remove
+export const events = E
+export const capture = C
 export const get = G
