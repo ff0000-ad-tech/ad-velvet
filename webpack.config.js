@@ -17,12 +17,28 @@ const babelOptions = {
 }
 
 module.exports = {
-	entry: path.resolve(__dirname, 'index.js'),
+	entry: path.resolve(__dirname, 'entry.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'umd.min.js',
-		library: 'adLoad',
-		libraryTarget: 'umd'
+		filename: 'umd.min.js'
+		// library: 'adVelvet',
+		// libraryTarget: 'umd'
+	},
+	resolve: {
+		alias: {
+			'ad-canvas': path.resolve(__dirname, '@ff0000-ad-tech/ad-canvas'),
+			'ad-control': path.resolve(__dirname, '@ff0000-ad-tech/ad-control'),
+			'ad-dates': path.resolve(__dirname, '@ff0000-ad-tech/ad-dates'),
+			'ad-events': path.resolve(__dirname, '@ff0000-ad-tech/ad-events'),
+			'ad-external': path.resolve(__dirname, '@ff0000-ad-tech/ad-external'),
+			'ad-geom': path.resolve(__dirname, '@ff0000-ad-tech/ad-geom'),
+			'ad-load': path.resolve(__dirname, '@ff0000-ad-tech/ad-load'),
+			'ad-polyfills': path.resolve(__dirname, '@ff0000-ad-tech/ad-polyfills'),
+			'ad-ui': path.resolve(__dirname, '@ff0000-ad-tech/ad-ui'),
+			'ad-utils': path.resolve(__dirname, '@ff0000-ad-tech/ad-utils'),
+			'ad-video': path.resolve(__dirname, '@ff0000-ad-tech/ad-video'),
+			'ad-view': path.resolve(__dirname, '@ff0000-ad-tech/ad-view')
+		}
 	},
 	// copy UglifySettings
 	plugins: [
