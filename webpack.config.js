@@ -1,6 +1,9 @@
 const path = require('path')
 const UglifyJsPlugin = require('webpack').optimize.UglifyJsPlugin
 
+//https://stackoverflow.com/questions/37485546/webpack-alias-and-es6-imports-exports
+//https://stackoverflow.com/questions/35600751/import-es6-module-into-global-scope
+
 // prettier-ignore
 const babelOptions = {
 	"presets": [
@@ -8,6 +11,7 @@ const babelOptions = {
 			"env",
 			{
 				"loose": true,
+				"modules":false
 			}
 		]
 	],
@@ -17,28 +21,28 @@ const babelOptions = {
 }
 
 module.exports = {
-	entry: path.resolve(__dirname, 'entry.js'),
+	entry: path.resolve(__dirname, 'index.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'velvet.min.js'
-		// library: 'adVelvet',
+		filename: 'velvet.min.js',
+		library: 'Velvet'
+		// libraryExport: ['DateManager', 'TzDate'] // <- may be the way to expose the date stuff as well as Velvet -> https://webpack.js.org/configuration/output/#output-library
 		// libraryTarget: 'umd'
 	},
 	resolve: {
 		alias: {
-			'ad-canvas': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-canvas'),
-			'ad-control': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-control'),
+			// 'ad-canvas': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-canvas'),
+			// 'ad-control': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-control'),
 			'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates'),
-			'ad-events': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-events'),
-			'ad-external': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-external'),
-			'ad-geom': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-geom'),
+			// 'ad-events': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-events'),
+			// 'ad-external': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-external'),
+			// 'ad-geom': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-geom'),
 			'ad-load': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-load'),
-			'ad-polyfills': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-polyfills'),
-			'ad-ui': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-ui'),
-			'ad-utils': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-utils'),
-			'ad-video': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-video'),
-			'ad-view': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-view')
-			// DataLoader: './node_modules/@ff0000-ad-tech/ad-load/lib/single/DataLoader.js'
+			// 'ad-polyfills': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-polyfills'),
+			// 'ad-ui': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-ui'),
+			'ad-utils': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-utils')
+			// 'ad-video': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-video'),
+			// 'ad-view': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-view')
 		}
 	},
 	// copy UglifySettings
@@ -55,9 +59,10 @@ module.exports = {
 			{
 				test: request => {
 					// return true
-					const isAdLoadIndex = request.includes('ad-velvet') && request.endsWith('entry.js')
-					console.log('test()', request.includes('ad-velvet'), request.endsWith('entry.js'), '|', request)
+					const isAdLoadIndex = request.includes('ad-velvet') && request.endsWith('index.js')
+					console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request)
 					return isAdLoadIndex
+					// return false
 				},
 				use: [
 					{
