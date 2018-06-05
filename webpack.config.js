@@ -21,11 +21,13 @@ const babelOptions = {
 }
 
 module.exports = {
-	entry: path.resolve(__dirname, 'index.js'),
+	entry: {
+		Velvet: path.resolve(__dirname, 'index.js')
+	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'velvet.min.js',
-		library: 'Velvet'
+		library: '[name]'
 		// libraryExport: ['DateManager', 'TzDate'] // <- may be the way to expose the date stuff as well as Velvet -> https://webpack.js.org/configuration/output/#output-library
 		// libraryTarget: 'umd'
 	},
