@@ -27,9 +27,9 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'velvet.min.js',
-		library: '[name]'
+		library: '[name]',
 		// libraryExport: ['DateManager', 'TzDate'] // <- may be the way to expose the date stuff as well as Velvet -> https://webpack.js.org/configuration/output/#output-library
-		// libraryTarget: 'umd'
+		libraryTarget: 'window'
 	},
 	resolve: {
 		alias: {
