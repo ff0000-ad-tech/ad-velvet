@@ -1,5 +1,6 @@
 const path = require('path')
 const UglifyJsPlugin = require('webpack').optimize.UglifyJsPlugin
+const IndexPlugin = require('@ff0000-ad-tech/wp-plugin-index')
 
 //https://stackoverflow.com/questions/37485546/webpack-alias-and-es6-imports-exports
 //https://stackoverflow.com/questions/35600751/import-es6-module-into-global-scope
@@ -55,18 +56,21 @@ module.exports = {
 				drop_console: true
 			}
 		}),
-		new IndexPlugin(DM, {
-			source: {
-				path: `./tmpl/velvet-enabler.js`
-			},
-			inject: {
-				'ad-dates': './bundles/ad-dates.min.js',
-				'ad-velvet': `./bundles/ad-velvet.min.js`
-			},
-			output: {
-				path: `./dist/velvet-enabler.js`
+		new IndexPlugin(
+			{},
+			{
+				source: {
+					path: `./tmpl/velvet-enabler.js`
+				},
+				inject: {
+					'ad-dates': './bundles/ad-dates.min.js',
+					'ad-velvet': `./bundles/ad-velvet.min.js`
+				},
+				output: {
+					path: `./dist/velvet-enabler.js`
+				}
 			}
-		})
+		)
 	],
 	module: {
 		rules: [
@@ -75,7 +79,7 @@ module.exports = {
 				test: request => {
 					// return true
 					const isAdLoadIndex = request.includes('ad-velvet') && request.endsWith('index.js')
-					console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request)
+					// console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request)
 					return isAdLoadIndex
 					// return false
 				},
