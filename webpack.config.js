@@ -22,14 +22,15 @@ const babelOptions = {
 
 module.exports = {
 	entry: {
-		Velvet: path.resolve(__dirname, 'index.js')
+		'ad-velvet': path.resolve(__dirname, 'index.js'),
+		'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: 'velvet.min.js',
-		library: '[name]',
+		path: path.resolve(__dirname, 'bundles'),
+		filename: '[name].min.js'
+		// library: '[name]',
 		// libraryExport: ['DateManager', 'TzDate'] // <- may be the way to expose the date stuff as well as Velvet -> https://webpack.js.org/configuration/output/#output-library
-		libraryTarget: 'window'
+		// libraryTarget: 'window'
 	},
 	resolve: {
 		alias: {
@@ -52,6 +53,18 @@ module.exports = {
 		new UglifyJsPlugin({
 			uglifyOptions: {
 				drop_console: true
+			}
+		}),
+		new IndexPlugin(DM, {
+			source: {
+				path: `./tmpl/velvet-enabler.js`
+			},
+			inject: {
+				'ad-dates': './bundles/ad-dates.min.js',
+				'ad-velvet': `./bundles/ad-velvet.min.js`
+			},
+			output: {
+				path: `./dist/velvet-enabler.js`
 			}
 		})
 	],
