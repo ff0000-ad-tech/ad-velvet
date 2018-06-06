@@ -8,22 +8,21 @@
     <title>Velvet Inline Tester</title>
 
     <script type="text/javascript">
-        var adParams = {
-            dateSettings: {
-                dateOverride: null,//['2017-06-11 09:30:01', 'local'],
-            },
-            velvet: {
-                client: "3YLOU2j85h",
-                locale: "ZFe1JLxvBk",
-                segment: "G5iUcOa2iG",
-            }
-        };
+        var dateSettings: {
+            dateOverride: null,//['2017-06-11 09:30:01', 'local'],
+        }
+        var slugs: {
+            client: "3YLOU2j85h",
+            locale: "ZFe1JLxvBk",
+            segment: "G5iUcOa2iG",
+        }
+
     </script>
 </head>
 
 <body>
 
-    <script id="velvet" src="velvet-enabler.js"></script>
+    <script id="velvet" src="../dist/velvet-enabler.js"></script>
 
 
     <script type="text/javascript">
@@ -38,7 +37,7 @@
         Velvet.addEventListener(Velvet.events.FAIL, failAd)
         Velvet.addEventListener(Velvet.events.STATIC, useStatic)
         Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
-        Velvet.init(adParams.velvet, adParams.dateSettings)
+        Velvet.init(slugs, dateSettings)
 
         function handleVelvetInit() {
             console.log('Velvet INIT handler')
