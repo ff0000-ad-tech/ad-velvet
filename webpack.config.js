@@ -22,7 +22,8 @@ const babelOptions = {
 
 module.exports = {
 	entry: {
-		Velvet: path.resolve(__dirname, 'index.js')
+		Velvet: path.resolve(__dirname, 'index.js'),
+		AdDates: path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -60,11 +61,8 @@ module.exports = {
 			// Rollup + Babel loader to generate smaller bundle, use one entry point
 			{
 				test: request => {
-					// return true
-					const isAdLoadIndex = request.includes('ad-velvet') && request.endsWith('index.js')
 					console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request)
-					return isAdLoadIndex
-					// return false
+					return request.includes('ad-velvet') && request.endsWith('index.js')
 				},
 				use: [
 					{
