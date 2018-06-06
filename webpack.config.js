@@ -35,15 +35,6 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			// 'ad-canvas': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-canvas'),
-			// 'ad-control': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-control'),
-			// 'ad-events': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-events'),
-			// 'ad-external': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-external'),
-			// 'ad-geom': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-geom'),
-			// 'ad-polyfills': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-polyfills'),
-			// 'ad-ui': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-ui'),
-			// 'ad-video': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-video'),
-			// 'ad-view': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-view')
 			'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates'),
 			'ad-load': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-load'),
 			'ad-utils': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-utils')
@@ -74,11 +65,8 @@ module.exports = {
 			// Rollup + Babel loader to generate smaller bundle, use one entry point
 			{
 				test: request => {
-					// return true
-					const isAdLoadIndex = request.includes('ad-velvet') && request.endsWith('index.js')
 					// console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request)
-					return isAdLoadIndex
-					// return false
+					return request.includes('ad-velvet') && request.endsWith('index.js')
 				},
 				use: [
 					{
