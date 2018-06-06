@@ -16,22 +16,21 @@ const babelOptions = {
 			}
 		]
 	],
-	"plugins": [
-		"transform-class-properties"
-	]
+	"plugins": [ "transform-class-properties" ]
 }
 
 module.exports = {
 	entry: {
+		// Velvet: path.resolve(__dirname, 'index.js'),
 		'ad-velvet': path.resolve(__dirname, 'index.js'),
 		'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')
 	},
 	output: {
 		path: path.resolve(__dirname, 'bundles'),
-		filename: '[name].min.js'
-		// library: '[name]',
+		filename: '[name].min.js',
+		library: '[name]',
 		// libraryExport: ['DateManager', 'TzDate'] // <- may be the way to expose the date stuff as well as Velvet -> https://webpack.js.org/configuration/output/#output-library
-		// libraryTarget: 'window'
+		libraryTarget: 'umd'
 	},
 	resolve: {
 		alias: {
@@ -78,6 +77,14 @@ module.exports = {
 						}
 					}
 				]
+			},
+			{
+				test: request => {
+					if (request.includes('ad-dates') && request.endsWith('index.js'))
+						return path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')
+					else return false
+				},
+				use: 'exports-loader?TzDate,RecurringSchedule,DateSchedule,spanish,DateFormatter,DateManager,DateUtils,Timezone'
 			},
 			{
 				test: /\.js$/,
