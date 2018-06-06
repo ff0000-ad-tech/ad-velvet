@@ -30,7 +30,7 @@
 	},
 	"devDependencies": {
 		"@ff0000-ad-tech/webpack-rollup-babel-loader": "git@github.com:ff0000-ad-tech/webpack-rollup-babel-loader.git",
-		"@ff0000-ad-tech/wp-plugin-index": "^1.0.7",
+		"@ff0000-ad-tech/wp-plugin-index": "git+ssh://git@github.com:ff0000-ad-tech/wp-plugin-index.git",
 		"babel-eslint": "^8.2.2",
 		"babel-loader": "^7.1.4",
 		"babel-preset-env": "^1.7.0",

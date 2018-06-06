@@ -57,7 +57,7 @@ module.exports = {
 			}
 		}),
 		new IndexPlugin(
-			{},
+			null,
 			{
 				source: {
 					path: `./tmpl/velvet-enabler.js`
