@@ -1,6 +1,6 @@
 const path = require('path')
 const UglifyJsPlugin = require('webpack').optimize.UglifyJsPlugin
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
 const IndexPlugin = require('@ff0000-ad-tech/wp-plugin-index')
 
 // prettier-ignore
@@ -26,7 +26,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'bundles'),
 		filename: 'Velvet.min.js', // [name].min.js
-		library: 'Velvet', // [name]
+		// library: 'Velvet', // [name]
 		libraryTarget: 'umd'
 	},
 	resolve: {
@@ -36,33 +36,50 @@ module.exports = {
 			'ad-utils': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-utils')
 		}
 	},
+	// externals: [
+	// 	function(context, request, callback) {
+	// 		let split = context.split('/')
+	// 		let sub = split[split.length - 1]
+	// 		let regex = /ad-dates/.test(request)
+	// 		console.log('->', regex, sub, request)
+	// 		// if (/^yourregex$/.test(request)) {
+	// 		// 	return callback(null, 'commonjs ' + request)
+	// 		// }
+	// 		if (regex) {
+	// 			return callback(null)
+	// 		}
+	// 		callback()
+	// 	}
+	// ],
+	// externals: /ad-dates/g,
+	externals: {
+		'ad-dates': 'ad-dates'
+	},
 	plugins: [
 		new UglifyJsPlugin({
 			uglifyOptions: {
 				drop_console: true
 			}
-		}),
-		// new HtmlWebpackPlugin(), // TODO: pass in a template with sample code
-		new IndexPlugin(null, {
-			source: {
-				path: `./tmpl/velvet-enabler.js`
-			},
-			inject: {
-				// 'ad-dates': './bundles/ad-dates.min.js',
-				'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates/dist/ad-dates.inline.js'),
-				Velvet: `./bundles/Velvet.min.js`
-			},
-			output: {
-				path: `./dist/velvet-enabler.js`
-			}
+			// }),
+			// // new HtmlWebpackPlugin(), // TODO: pass in a template with sample code
+			// new IndexPlugin(null, {
+			// 	source: {
+			// 		path: `./tmpl/velvet-enabler.js`
+			// 	},
+			// 	inject: {
+			// 		'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates/dist/ad-dates.min.js'),
+			// 		Velvet: `./bundles/Velvet.min.js`
+			// 	},
+			// 	output: {
+			// 		path: `./dist/velvet-enabler.js`
+			// 	}
 		})
 	],
 	module: {
 		rules: [
-			// Rollup + Babel loader to generate smaller bundle, use one entry point
 			{
 				test: request => {
-					// console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request)
+					console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request.split('1-build')[1])
 					return request.includes('ad-velvet') && request.endsWith('index.js')
 				},
 				use: [

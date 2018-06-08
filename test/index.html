@@ -8,14 +8,15 @@
     <title>Velvet Inline Tester</title>
 
     <script type="text/javascript">
-        var dateSettings: {
+        var dateSettings = {
             dateOverride: null,//['2017-06-11 09:30:01', 'local'],
         }
-        var slugs: {
+        var slugs = {
             client: "3YLOU2j85h",
             locale: "ZFe1JLxvBk",
             segment: "G5iUcOa2iG",
         }
+        var adParams = {}
 
     </script>
 </head>
@@ -33,6 +34,8 @@
             console.log("Index.failAd()");
             useStatic();
         }
+
+        // DateManager.init(dateSettings)
 
         Velvet.addEventListener(Velvet.events.FAIL, failAd)
         Velvet.addEventListener(Velvet.events.STATIC, useStatic)
