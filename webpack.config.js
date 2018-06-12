@@ -64,6 +64,8 @@ module.exports = {
 	// 	'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')
 	// },
 
+	externals: /^(ad\-dates)/g,
+
 	plugins: [
 		new UglifyJsPlugin({
 			uglifyOptions: {
