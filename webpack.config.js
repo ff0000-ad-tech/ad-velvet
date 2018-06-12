@@ -3,6 +3,8 @@ const UglifyJsPlugin = require('webpack').optimize.UglifyJsPlugin
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 const IndexPlugin = require('@ff0000-ad-tech/wp-plugin-index')
 
+const DM = require('@ff0000-ad-tech/wp-deploy-manager')
+
 // prettier-ignore
 const babelOptions = {
 	"presets": [
@@ -18,61 +20,68 @@ const babelOptions = {
 }
 
 module.exports = {
-	// entry: {
-	// 	'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates'),
-	// 	Velvet: path.resolve(__dirname, 'index.js')
-	// },
 	entry: path.resolve(__dirname, 'index.js'),
 	output: {
 		path: path.resolve(__dirname, 'bundles'),
-		filename: 'Velvet.min.js', // [name].min.js
-		// library: 'Velvet', // [name]
-		libraryTarget: 'umd'
+		filename: 'Velvet.min.js',
+		library: 'Velvet'
+		// libraryTarget: 'umd'
 	},
 	resolve: {
-		alias: {
-			'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates'),
-			'ad-load': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-load'),
-			'ad-utils': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-utils')
-		}
+		alias: DM.aliases.getTopLevel(path.resolve(__dirname, 'node_modules/@ff0000-ad-tech'))
 	},
+
+	// externals: 'ad-dates',
+
+	// externals: ['ad-dates'],
+
+	// externals: {
+	// 	'ad-dates': true
+	// },
+
+	// externals: {
+	// 	'ad-dates': 'ad-dates'
+	// },
+
+	// externals: {
+	// 	'ad-dates': {
+	// 		root: 'ad-dates',
+	// 		commonjs2: 'ad-dates',
+	// 		commonjs: 'ad-dates',
+	// 		amd: 'ad-dates',
+	// 		var: 'ad-dates'
+	// 	}
+	// },
+
 	// externals: [
-	// 	function(context, request, callback) {
-	// 		let split = context.split('/')
-	// 		let sub = split[split.length - 1]
-	// 		let regex = /ad-dates/.test(request)
-	// 		console.log('->', regex, sub, request)
-	// 		// if (/^yourregex$/.test(request)) {
-	// 		// 	return callback(null, 'commonjs ' + request)
-	// 		// }
-	// 		if (regex) {
-	// 			return callback(null)
-	// 		}
+	// 	(context, request, callback) => {
+	// 		if (/^ad-dates/.test(request)) return callback(null, request)
 	// 		callback()
 	// 	}
 	// ],
-	// externals: /ad-dates/g,
-	externals: {
-		'ad-dates': 'ad-dates'
-	},
+
+	// externals: {
+	// 	'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')
+	// },
+
 	plugins: [
 		new UglifyJsPlugin({
 			uglifyOptions: {
 				drop_console: true
 			}
-			// }),
-			// // new HtmlWebpackPlugin(), // TODO: pass in a template with sample code
-			// new IndexPlugin(null, {
-			// 	source: {
-			// 		path: `./tmpl/velvet-enabler.js`
-			// 	},
-			// 	inject: {
-			// 		'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates/dist/ad-dates.min.js'),
-			// 		Velvet: `./bundles/Velvet.min.js`
-			// 	},
-			// 	output: {
-			// 		path: `./dist/velvet-enabler.js`
-			// 	}
+		}),
+		// new HtmlWebpackPlugin(), // TODO: pass in a template with sample code
+		new IndexPlugin(null, {
+			source: {
+				path: `./tmpl/velvet-enabler.js`
+			},
+			inject: {
+				'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates/dist/ad-dates.min.js'),
+				Velvet: `./bundles/Velvet.min.js`
+			},
+			output: {
+				path: `./dist/velvet-enabler.js`
+			}
 		})
 	],
 	module: {
