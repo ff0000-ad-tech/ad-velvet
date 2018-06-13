@@ -21,6 +21,8 @@ const babelOptions = {
 	"plugins": [ "transform-class-properties" ]
 }
 
+const dirs = DM.aliases.getTopLevel(path.resolve(__dirname, 'node_modules/@ff0000-ad-tech'))
+console.log(dirs)
 module.exports = {
 	entry: path.resolve(__dirname, 'index.js'),
 	output: {
@@ -30,7 +32,7 @@ module.exports = {
 		// libraryTarget: 'umd'
 	},
 	resolve: {
-		alias: DM.aliases.getTopLevel(path.resolve(__dirname, 'node_modules/@ff0000-ad-tech'))
+		alias: dirs
 	},
 
 	// externals: 'ad-dates',
@@ -65,18 +67,19 @@ function (err, value, type) {
 	}
 }
 	*/
-	externals: [
-		(context, request, callback) => {
-			// console.log('externals:', /ad-dates/.test(request), context, '|', request)
-			console.log('externals:', /ad-dates/.test(request), context.split('1-build')[1], '|', request.split('1-build')[1])
-			if (/ad-dates/.test(request)) {
-				return callback(null, null)
-			} else {
-				callback()
-			}
-		}
-	],
-	// externals: [/ad-dates/],
+	// externals: [
+	// 	(context, request, callback) => {
+	// 		// console.log('externals:', /ad-dates/.test(request), context, '|', request)
+	// 		// console.log('externals:', /ad-test-a/.test(request), context.split('1-build')[1], '|', request.split('1-build')[1])
+	// 		if (/ad-test-a/.test(request)) {
+	// 			console.log('\texternals :', context.split('1-build')[1], '|', request.split('1-build')[1])
+	// 			return callback(null, 'ad-test-a ' + request)
+	// 		} else {
+	// 			callback()
+	// 		}
+	// 	}
+	// ],
+	// externals: [/ad-test-a/],
 
 	// externals: {
 	// 	'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')

@@ -6,27 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta content="utf-8" http-equiv="encoding">
     <title>Velvet Inline Tester</title>
+</head>
+
+<body>
+    <script id="velvet" src="../dist/velvet-enabler.js"></script>
 
     <script type="text/javascript">
         var dateSettings = {
-            dateOverride: null,//['2017-06-11 09:30:01', 'local'],
+            dateOverride: ['2017-06-11 09:30:01', 'local'],
         }
         var slugs = {
             client: "3YLOU2j85h",
             locale: "ZFe1JLxvBk",
             segment: "G5iUcOa2iG",
+            addata: "9KyAwgTg1O"
         }
-        var adParams = {}
 
-    </script>
-</head>
-
-<body>
-
-    <script id="velvet" src="../dist/velvet-enabler.js"></script>
-
-
-    <script type="text/javascript">
         function useStatic() {
             console.log("Index.useStatic()");
         }
@@ -34,12 +29,6 @@
             console.log("Index.failAd()");
             useStatic();
         }
-
-        Velvet.addEventListener(Velvet.events.FAIL, failAd)
-        Velvet.addEventListener(Velvet.events.STATIC, useStatic)
-        Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
-        Velvet.init(slugs, dateSettings)
-
         function handleVelvetInit() {
             console.log('Velvet INIT handler')
             var tunein = Velvet.get('game.date')
@@ -55,31 +44,10 @@
             schedule.print()
         }
 
-        // function matchProtocolTo(_url) {
-        //     var noProtocol = _url.search(/^\/\//) > -1
-        //     if (_url.search(/^http/) > -1 || noProtocol) {
-        //         var _secure = window.location.href.search(/^https/) > -1 //|| adParams.forceHttps
-        //         var _httpProtocol = _secure ? 'https://' : 'http://'
-        //         if (noProtocol) {
-        //             _url = _url.replace(/^\/\//, _httpProtocol)
-        //         }
-        //         if (_url.search(/.*edgecastcdn/) > -1) {
-        //             var _edgecastContext = _secure ? 'ne1.' + _url.match(/w(a|p)c/i)[0] + '.' : _url.match(/w(a|p)c\.[a-z0-9]*\./i)[0]
-        //             _url = _httpProtocol + _edgecastContext + 'edgecastcdn' + _url.replace(/.*edgecastcdn/, '')
-        //         }
-        //         else if (_url.search(/.*paramount\.com/) > -1) {
-        //             var _paramountContext = _secure ? 'paramountdlds-a.akamaihd.net' : 'downloads.paramount.com'
-        //             _url = _httpProtocol + _paramountContext + _url.replace(/.*paramount\.com/, '')
-        //         }
-        //         else if (_url.search(/espn\.go\.com/) > -1 || _url.search(/secure\.espncdn\.com/) > -1) {
-        //             _url = 'https://secure.espncdn.com' + _url.replace(/^.*\.com/, '')
-        //         }
-        //         else {
-        //             _url = _url.replace(/^https?\:\/\//i, _httpProtocol)
-        //         }
-        //     }
-        //     return _url
-        // }
+        Velvet.addEventListener(Velvet.events.FAIL, failAd)
+        Velvet.addEventListener(Velvet.events.STATIC, useStatic)
+        Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
+        Velvet.init(slugs, dateSettings)
 
     </script>
 </body>
