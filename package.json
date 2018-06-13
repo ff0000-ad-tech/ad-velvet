@@ -44,6 +44,7 @@
 		"prettier": "^1.13.5",
 		"rollup": "^0.59.2",
 		"webpack": "^3.8.1",
-		"webpack-cli": "^2.0.9"
+		"webpack-cli": "^2.0.9",
+		"webpack-node-externals": "^1.7.2"
 	}
 }

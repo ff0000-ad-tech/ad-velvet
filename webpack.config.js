@@ -5,6 +5,8 @@ const IndexPlugin = require('@ff0000-ad-tech/wp-plugin-index')
 
 const DM = require('@ff0000-ad-tech/wp-deploy-manager')
 
+var nodeExternals = require('webpack-node-externals')
+
 // prettier-ignore
 const babelOptions = {
 	"presets": [
@@ -53,18 +55,40 @@ module.exports = {
 	// 	}
 	// },
 
-	// externals: [
-	// 	(context, request, callback) => {
-	// 		if (/^ad-dates/.test(request)) return callback(null, request)
-	// 		callback()
-	// 	}
-	// ],
+	/*
+function (err, value, type) {
+	if(err) return callback(err);
+	if(typeof value !== "undefined") {
+		handleExternal(value, type, callback);
+	} else {
+		callback();
+	}
+}
+	*/
+	externals: [
+		(context, request, callback) => {
+			// console.log('externals:', /ad-dates/.test(request), context, '|', request)
+			console.log('externals:', /ad-dates/.test(request), context.split('1-build')[1], '|', request.split('1-build')[1])
+			if (/ad-dates/.test(request)) {
+				return callback(null, null)
+			} else {
+				callback()
+			}
+		}
+	],
+	// externals: [/ad-dates/],
 
 	// externals: {
 	// 	'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates')
 	// },
 
-	externals: /^(ad\-dates)/g,
+	// externals: /^(ad\-dates)/g,
+
+	// externals: [
+	// 	nodeExternals({
+	// 		// whitelist: ['ad-utils']
+	// 	})
+	// ],
 
 	plugins: [
 		new UglifyJsPlugin({
