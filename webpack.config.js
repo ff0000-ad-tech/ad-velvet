@@ -22,14 +22,14 @@ const babelOptions = {
 }
 
 const dirs = DM.aliases.getTopLevel(path.resolve(__dirname, 'node_modules/@ff0000-ad-tech'))
-console.log(dirs)
 module.exports = {
 	entry: path.resolve(__dirname, 'index.js'),
 	output: {
 		path: path.resolve(__dirname, 'bundles'),
 		filename: 'Velvet.min.js',
-		library: 'Velvet'
-		// libraryTarget: 'umd'
+		library: 'Velvet',
+		// allows named imports from globally available ad package
+		libraryTarget: 'umd'
 	},
 	resolve: {
 		alias: dirs
@@ -41,10 +41,6 @@ module.exports = {
 
 	// externals: {
 	// 	'ad-dates': true
-	// },
-
-	// externals: {
-	// 	'ad-dates': 'ad-dates'
 	// },
 
 	// externals: {
@@ -93,6 +89,11 @@ function (err, value, type) {
 	// 	})
 	// ],
 
+	externals: {
+		// object values in externals object MUST be valid variable name
+		'ad-dates': 'adDates'
+	},
+
 	plugins: [
 		new UglifyJsPlugin({
 			uglifyOptions: {
@@ -116,6 +117,17 @@ function (err, value, type) {
 	module: {
 		rules: [
 			{
+				test: /\.js$/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							plugins: babelOptions.plugins
+						}
+					}
+				]
+			},
+			{
 				test: request => {
 					console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request.split('1-build')[1])
 					return request.includes('ad-velvet') && request.endsWith('index.js')
@@ -126,18 +138,13 @@ function (err, value, type) {
 						options: {
 							babelOptions: {
 								presets: babelOptions.presets
-							}
-						}
-					}
-				]
-			},
-			{
-				test: /\.js$/,
-				use: [
-					{
-						loader: 'babel-loader',
-						options: {
-							plugins: babelOptions.plugins
+							},
+							// basically a copy of Webpack externals
+							globals: {
+								'ad-dates': 'adDates'
+							},
+							// here, list package names for Rollup to assume have already been loaded externally
+							external: ['ad-dates']
 						}
 					}
 				]
