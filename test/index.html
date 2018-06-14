@@ -10,16 +10,16 @@
 
 <body>
     <script id="velvet" src="../dist/velvet-enabler.js"></script>
-
     <script type="text/javascript">
-        var dateSettings = {
-            dateOverride: ['2017-06-11 09:30:01', 'local'],
-        }
         var slugs = {
             client: "3YLOU2j85h",
             locale: "ZFe1JLxvBk",
             segment: "G5iUcOa2iG",
             addata: "9KyAwgTg1O"
+        }
+        var dateSettings = {
+            dateOverride: ['2017-06-11 09:30:01', 'local'],
+            language: 'spanish'
         }
 
         function useStatic() {
@@ -30,10 +30,9 @@
             useStatic();
         }
         function handleVelvetInit() {
-            console.log('Velvet INIT handler')
+            console.log('Index.handleVelvetInit()')
+            // sample date usage
             var tunein = Velvet.get('game.date')
-            console.log('\t tunein:', tunein)
-
             var schedule = new DateSchedule({
                 target: new TzDate({
                     datetime: tunein.datetime,
@@ -48,7 +47,6 @@
         Velvet.addEventListener(Velvet.events.STATIC, useStatic)
         Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
         Velvet.init(slugs, dateSettings)
-
     </script>
 </body>
 
