@@ -34,6 +34,7 @@
 		"@ff0000-ad-tech/webpack-rollup-babel-loader": "latest",
 		"@ff0000-ad-tech/wp-deploy-manager": "^2.0.7",
 		"@ff0000-ad-tech/wp-plugin-index": "^1.0.9",
+		"@ff0000-ad-tech/wp-plugin-payload": "latest",
 		"babel-eslint": "^8.2.2",
 		"babel-loader": "^7.1.4",
 		"babel-preset-env": "^1.7.0",
@@ -45,7 +46,6 @@
 		"prettier": "^1.13.5",
 		"rollup": "^0.59.2",
 		"webpack": "^3.8.1",
-		"webpack-cli": "^2.0.9",
-		"webpack-node-externals": "^1.7.2"
+		"webpack-cli": "^2.0.9"
 	}
 }
