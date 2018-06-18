@@ -8,7 +8,7 @@
 	"main": "index.js",
 	"scripts": {
 		"pub": "np",
-		"dist": "npx webpack --config webpack.config.js",
+		"dist": "npx webpack --config webpack.config.js --env.environment=debug && npx webpack --config webpack.config.js --env.environment=min",
 		"localhost": "http-server"
 	},
 	"repository": {
@@ -18,14 +18,14 @@
 	"author": "RED Interactive Agency",
 	"license": "MIT",
 	"dependencies": {
-		"@ff0000-ad-tech/ad-canvas": "^1.1.0",
+		"@ff0000-ad-tech/ad-canvas": "^1.1.1",
 		"@ff0000-ad-tech/ad-control": "latest",
 		"@ff0000-ad-tech/ad-dates": "git+ssh://git@github.com/ff0000-ad-tech/ad-dates.git#feature/enabler",
 		"@ff0000-ad-tech/ad-events": "latest",
 		"@ff0000-ad-tech/ad-external": "latest",
 		"@ff0000-ad-tech/ad-global": "git+ssh://git@github.com/ff0000-ad-tech/ad-global.git#feature/enabler",
 		"@ff0000-ad-tech/ad-load": "git+ssh://git@github.com/ff0000-ad-tech/ad-load.git#feature/enabler",
-		"@ff0000-ad-tech/ad-ui": "latest",
+		"@ff0000-ad-tech/ad-ui": "^1.2.1",
 		"@ff0000-ad-tech/ad-utils": "git+ssh://git@github.com/ff0000-ad-tech/ad-utils.git#feature/enabler",
 		"@ff0000-ad-tech/ad-video": "latest",
 		"@ff0000-ad-tech/ad-view": "latest"
