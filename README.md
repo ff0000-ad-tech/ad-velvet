@@ -178,86 +178,13 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. I
 </script>
 ```
 
+## ES6/Webpack/Babel
+
+Examples forthcoming.
+
 ## Google Web Designer
 
-```html
-   <script id="velvet" src="../../../dist/velvet-enabler.js"></script>
-   <script type="text/javascript" id="gwd-init-code">
-           (function () {
-               var gwdAd = document.getElementById('gwd-ad');
-
-               /**
-                * Handles the DOMContentLoaded event. The DOMContentLoaded event is
-                * fired when the document has been completely loaded and parsed.
-                */
-               function handleDomContentLoaded(event) {
-                   console.log('handleDomContentLoaded()')
-               }
-
-               /**
-                * Handles the WebComponentsReady event. This event is fired when all
-                * custom elements have been registered and upgraded.
-                */
-               function handleWebComponentsReady(event) {
-                   console.log('handleWebComponentsReady()')
-                   // Start the Ad lifecycle.
-                   var slugs = {
-                       client: "3YLOU2j85h",
-                       locale: "ZFe1JLxvBk",
-                       segment: "G5iUcOa2iG",
-                       addata: "9KyAwgTg1O"
-                   }
-                   var dateSettings = {
-                       dateOverride: ['2017-06-11 09:30:01', 'local'],
-                       language: 'spanish'
-                   }
-
-                   function useStatic() {
-                       console.log("Index.useStatic()");
-                   }
-                   function failAd() {
-                       console.log("Index.failAd()");
-                       useStatic();
-                   }
-                   function handleVelvetInit() {
-                       console.log('Index.handleVelvetInit()')
-                       // sample date usage
-                       var tunein = Velvet.get('game.date')
-                       var schedule = new DateSchedule({
-                           target: new TzDate({
-                               datetime: tunein.datetime,
-                               outputTimezone: tunein.timezone
-                           }),
-                           isStandard: true
-                       })
-                       schedule.print()
-
-                       gwdAd.initAd();
-                   }
-
-                   Velvet.addEventListener(Velvet.events.FAIL, failAd)
-                   Velvet.addEventListener(Velvet.events.STATIC, useStatic)
-                   Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
-                   Velvet.init(slugs, dateSettings)
-               }
-
-               /**
-                * Handles the event that is dispatched after the Ad has been
-                * initialized and before the default page of the Ad is shown.
-                */
-               function handleAdInitialized(event) {
-                   console.log('handleAdInitialized()')
-               }
-
-               window.addEventListener('DOMContentLoaded',
-                   handleDomContentLoaded, false);
-               window.addEventListener('WebComponentsReady',
-                   handleWebComponentsReady, false);
-               window.addEventListener('adinitialized',
-                   handleAdInitialized, false);
-           })();
-   </script>
-```
+Examples forthcoming.
 
 # Concepts
 
