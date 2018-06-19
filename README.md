@@ -30,7 +30,7 @@ Velvet Ads can be built according to your preference:
 - Vanilla Javascript
 - Google Web Designer
 
-## Getting Started
+# Getting Started
 
 <a name="getting-started"></a>
 Models for "Ad Data" are built using the Velvet Platform. For this, you will need a Velvet account. Go to https://www.velvet.tech/ for more information.
@@ -43,21 +43,21 @@ Velvet-compatible ads include `velvet-enabler.js`, either compiled, inlined, or 
 npm install @ff0000-ad-tech/ad-velvet --save
 ```
 
-Path to the distribution via
+Include the distribution via:
 
 ```javascript
 './node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js'
 ```
 
-Or import with ES6
+Or import with ES6:
 
 ```javascript
 import { Velvet } from '@ff0000-ad-tech/ad-velvet'
 ```
 
-#### Manual
+#### GitHub
 
-Browse to one of the [Javascript distributions](https://github.com/ff0000-ad-tech/ad-velvet/tree/feature/enabler/dist), copy-and-paste the code into a local file named `velvet-enabler.js`.
+Clone or download this repo. You will find the [Javascript distributions](https://github.com/ff0000-ad-tech/ad-velvet/tree/feature/enabler/dist) at this path `ad-velvet/dist`.
 
 Using this method, you will likely include Velvet Enabler via `<script>` tag, like
 
@@ -65,7 +65,18 @@ Using this method, you will likely include Velvet Enabler via `<script>` tag, li
 <script type="text/javascript" src="js/velvet-enabler.js"></script>
 ```
 
-## Guides
+#### Debugging
+
+There are 2 distributions:
+
+- `velvet-enabler.js` - completely obfuscated/minified and generates no console output.
+- `velvet-enabler.debug.js` - has console output.
+
+For sanity while developing, use the "debug" version. Velvet events are logged in the browser console.
+
+For optimized delivery, use the production version, which is 5k smaller.
+
+# Guides
 
 <a name="guides"></a>
 
@@ -115,7 +126,7 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. I
 1.  Change the ad’s understanding of what “now” is. For testing, you can easily set the “now” time to the future or past to update the state of the ad.
 2.  Set the date-related messaging to another language. Velvet Enabler natively supports English and Spanish. There are ways to add other languages, which can be found in the docs.
 
-## Concepts
+# Concepts
 
 <a name="concepts"></a>
 
@@ -138,7 +149,7 @@ There are many others. How is Velvet different?
 4.  **Velvet is flexible for developers.**
     Agencies on the forefront of banner development have systems in place for generating lightweight, attractive content. Velvet is compatible with your stack.
 
-## API
+# API
 
 <a name="api"></a>
 
