@@ -22,7 +22,7 @@ The Velvet Platform is a licensable, web-based, CMP living at https://www.velvet
 
 ### Velvet Enabler
 
-This project includes the frontend for the Velvet CMP -- it enables creative units to load & respond dynamically to sub-loaded Velvet feed.
+This project includes the frontend for the Velvet CMP -- it enables creative units to load & respond dynamically to Velvet feeds.
 
 Velvet Ads can be built according to your preference:
 
