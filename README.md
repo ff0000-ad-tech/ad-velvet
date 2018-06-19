@@ -113,11 +113,11 @@ In Velvet, go to `CAMPAIGN` > `LOCALE` > `SEGMENTS`. Select the `JSON URLs` icon
 
 Client & Locale slugs are always required.
 
-###### Segment
+##### Segment
 
 Segments will allow you to rotate Ad Data on a schedule.
 
-###### Ad Data
+##### Ad Data
 
 If you wish to target a specific Ad Data for your creative, navigate instead to `CAMPAIGN` > `LOCALE` > `AD DATA` tab. The Slugs object will have `addata` rather than `segment`.
 
@@ -254,9 +254,11 @@ For more advanced queries, check out the [API](#api) section.
 
 <a name="concepts"></a>
 
-Programatic advertising enables Brands to reach specific demographics with a specific impression & message.
+Programatic advertising enables Brands to reach their demographics with specific impressions & messages.
 
-Content Management Platforms (CMP's) are the mechanism that help brand managers organize creative according to those targets. Some popular options are:
+Building out ads for all of those targets can be an exhausting process, due to the terrific amount of redundancy, asset management and delivery juggling. It's often preferable to build a _dynamic_ unit that can account for many targets in one shot.
+
+Content Management Platforms (CMP's) are the mechanism that help brand managers organize this volume, while reducing the number of builds necessary to produce those targets. Some popular options are:
 
 - DoubleClick Studio (Google Dynamic Content)
 - Flashtalking
