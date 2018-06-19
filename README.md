@@ -139,42 +139,43 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. I
 ```html
 <script id="velvet" src="../dist/velvet-enabler.js"></script>
 <script type="text/javascript">
-   var slugs = {
-       client: "3YLOU2j85h",
-       locale: "ZFe1JLxvBk",
-       segment: "G5iUcOa2iG",
-       addata: "9KyAwgTg1O"
-   }
-   var dateSettings = {
-       dateOverride: ['2017-06-11 09:30:01', 'local'],
-       language: 'spanish'
-   }
+    var slugs = {
+        client: "3YLOU2j85h",
+        locale: "ZFe1JLxvBk",
+        segment: "G5iUcOa2iG",
+        addata: "9KyAwgTg1O"
+    };
+    var dateSettings = {
+        dateOverride: ['2017-06-11 09:30:01', 'local'],
+        language: 'spanish'
+    };
 
-   function useStatic() {
-       console.log("Index.useStatic()");
-   }
-   function failAd() {
-       console.log("Index.failAd()");
-       useStatic();
-   }
-   function handleVelvetInit() {
-       console.log('Index.handleVelvetInit()')
-       // sample get data and date schedule usage
-       var tunein = Velvet.get('game.date')
-       var schedule = new DateSchedule({
-           target: new TzDate({
-               datetime: tunein.datetime,
-               outputTimezone: tunein.timezone
-           }),
-           isStandard: true
-       })
-       schedule.print()
-   }
+    function useStatic() {
+        console.log("Index.useStatic()");
+    }
+    function failAd() {
+        console.log("Index.failAd()");
+        useStatic();
+    }
+    function handleVelvetInit() {
+        console.log('Index.handleVelvetInit()');
+        // sample get data and date schedule usage
+        var tunein = Velvet.get('game.date');
+        var schedule = new DateSchedule({
+            target: new TzDate({
+                datetime: tunein.datetime,
+                outputTimezone: tunein.timezone
+            }),
+            isStandard: true
+        });
+        schedule.print();
+    }
 
-   Velvet.addEventListener(Velvet.events.FAIL, failAd)
-   Velvet.addEventListener(Velvet.events.STATIC, useStatic)
-   Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
-   Velvet.init(slugs, dateSettings)
+    Velvet.addEventListener(Velvet.events.FAIL, failAd);
+    Velvet.addEventListener(Velvet.events.STATIC, useStatic);
+    Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit);
+
+    Velvet.init(slugs, dateSettings);
 </script>
 ```
 
