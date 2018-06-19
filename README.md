@@ -72,15 +72,14 @@ Using this method, you will likely include Velvet Enabler via `<script>` tag, li
 The Velvet Enabler will:
 
 - Manage loading Velvet data
-- Making it globally available to your ad
-
-From there, use the data-management features to help with time-specific messaging, layouts, and testing.
+- Make the data globally available to your ad
+- Provide date-management features for testing time-specific messaging
 
 ### Targeting Data
 
 Every audience target needs a different message. Build the ad to respond dynamically, then traffic an index telling Velvet which state of data to represent.
 
-##### Slugs
+#### Slugs
 
 Slugs are codes used by your ad to identify different data states & request data from Velvet. They correspond to:
 
@@ -89,18 +88,24 @@ Slugs are codes used by your ad to identify different data states & request data
 - Segment
 - Ad-Data
 
-Client & Locale are required for initialization.
+##### Client & Locale
 
-Segment & Ad-Data have different purposes:
+Client & Locale slugs are always required. Segment & Ad-Data have different purposes:
+
+###### Segment
 
 Segments will allow you to rotate Ad Data on a schedule. To find them, in Velvet, navigate to the `SEGMENTS` tab of your campaign, select the `JSON URLs` icon to get a pop-up. In the window will be a Slugs object. Copy and paste that into your `Velvet.init({ slugs })`.
+
+###### Ad Data
 
 If you wish to only target a specific Ad Data for your creative, follow the same steps in the `AD DATA` tab. In the Slugs object will have `addata` rather than `segment`.
 
 ### Listening for Events
 
 `FAIL` - if the load of the data fails
+
 `STATIC` - if the `ad_rotation` in the segment json is set as `USE_STATIC` rather than a number
+
 `INIT` - when the data is loaded and ready to be consumed
 
 ### Adding Date Settings
@@ -108,7 +113,7 @@ If you wish to only target a specific Ad Data for your creative, follow the same
 The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. It is optional and it does two things:
 
 1.  Change the ad’s understanding of what “now” is. For testing, you can easily set the “now” time to the future or past to update the state of the ad.
-2.  Set the date related messaging to be set to Spanish. Velvet Enabler natively supports English and Spanish. There are ways to add other languages, which can be found in the docs.
+2.  Set the date-related messaging to another language. Velvet Enabler natively supports English and Spanish. There are ways to add other languages, which can be found in the docs.
 
 ## Concepts
 
