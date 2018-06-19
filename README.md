@@ -139,7 +139,7 @@ Data is passed to the ad in the form of a JSON feed. Once it's loaded, you can a
 Velvet.get('json-key')
 ```
 
-For more detail see the examples below.
+For more detail see the [Examples](#examples) below.
 
 ### Adding Date Settings
 
