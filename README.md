@@ -265,7 +265,3 @@ There are many others. How is Velvet different?
 <a name="api"></a>
 
 The source code of Velvet Enabler has code documentation, that can be found by at [FF0000 Ad Tech API - Docs](https://ff0000-ad-tech.github.io/ad-docs/). Search for `Velvet`.
-
-```
-
-```
