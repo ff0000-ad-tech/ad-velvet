@@ -99,7 +99,7 @@ Slugs are codes used by your ad to identify different data states & request data
 - Segment
 - Ad-Data
 
-##### Find Slugs in Velvet Platform
+#### Get Slugs from Velvet Platform
 
 ![Velvet Slug Route](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-slug-route.png)
 
@@ -131,6 +131,52 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. I
 
 1.  Change the ad’s understanding of what “now” is. For testing, you can easily set the “now” time to the future or past to update the state of the ad.
 2.  Set the date-related messaging to another language. Velvet Enabler natively supports English and Spanish. There are ways to add other languages, which can be found in the docs.
+
+# Example Setup
+
+## Vanilla Javascript
+
+```html
+<script id="velvet" src="../dist/velvet-enabler.js"></script>
+<script type="text/javascript">
+   var slugs = {
+       client: "3YLOU2j85h",
+       locale: "ZFe1JLxvBk",
+       segment: "G5iUcOa2iG",
+       addata: "9KyAwgTg1O"
+   }
+   var dateSettings = {
+       dateOverride: ['2017-06-11 09:30:01', 'local'],
+       language: 'spanish'
+   }
+
+   function useStatic() {
+       console.log("Index.useStatic()");
+   }
+   function failAd() {
+       console.log("Index.failAd()");
+       useStatic();
+   }
+   function handleVelvetInit() {
+       console.log('Index.handleVelvetInit()')
+       // sample get data and date schedule usage
+       var tunein = Velvet.get('game.date')
+       var schedule = new DateSchedule({
+           target: new TzDate({
+               datetime: tunein.datetime,
+               outputTimezone: tunein.timezone
+           }),
+           isStandard: true
+       })
+       schedule.print()
+   }
+
+   Velvet.addEventListener(Velvet.events.FAIL, failAd)
+   Velvet.addEventListener(Velvet.events.STATIC, useStatic)
+   Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
+   Velvet.init(slugs, dateSettings)
+</script>
+```
 
 # Concepts
 
