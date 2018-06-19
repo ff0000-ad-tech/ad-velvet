@@ -94,7 +94,7 @@ Every audience target needs a different message. Build the ad to respond dynamic
 
 #### Slugs
 
-Slugs are codes used by your ad to identify different data states & request data from Velvet. They correspond to:
+Slugs are codes used by your ad to identify Velvet data. They correspond to:
 
 - Client
 - Locale
@@ -103,21 +103,25 @@ Slugs are codes used by your ad to identify different data states & request data
 
 #### Get Slugs from Velvet Platform
 
+In Velvet, go to `CAMPAIGN` > `LOCALE` > `SEGMENTS`. Select the `JSON URLs` icon to get a pop-up. In the window will be a Slugs object. Copy and paste that into your ad's `Velvet.init(__slugs-object__)`.
+
 ![Velvet Slug Route](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-slug-route.png)
 
 ![Velvet Slugs](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-slugs.png)
 
 ##### Client & Locale
 
-Client & Locale slugs are always required. Segment & Ad-Data have different purposes:
+Client & Locale slugs are always required.
 
 ###### Segment
 
-Segments will allow you to rotate Ad Data on a schedule. To find them, in Velvet, navigate to the `SEGMENTS` tab of your campaign, select the `JSON URLs` icon to get a pop-up. In the window will be a Slugs object. Copy and paste that into your `Velvet.init(__slugs-object__)`.
+Segments will allow you to rotate Ad Data on a schedule.
 
 ###### Ad Data
 
-If you wish to only target a specific Ad Data for your creative, follow the same steps in the `AD DATA` tab. In the Slugs object will have `addata` rather than `segment`.
+If you wish to target a specific Ad Data for your creative, navigate instead to `CAMPAIGN` > `LOCALE` > `AD DATA` tab. The Slugs object will have `addata` rather than `segment`.
+
+This will have the effect of "hard-coding" the ad to the selected Ad Data.
 
 ### Listening for Events
 
