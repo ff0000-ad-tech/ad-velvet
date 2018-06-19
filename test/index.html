@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <script id="velvet" src="../dist/velvet-enabler.js"></script>
+    <script id="velvet" src="../dist/velvet-enabler.debug.js"></script>
     <script type="text/javascript">
         var slugs = {
-            client: "3YLOU2j85h",
-            locale: "ZFe1JLxvBk",
-            segment: "G5iUcOa2iG",
-            // addata: "9KyAwgTg1O"
+            "client": "zJfUigQUn0",
+            "locale": "DsNDfsjq2z",
+            "segment": "K9kB6jBTYb",
+            "addata": "Yc8FEGKqa5"
         }
         var dateSettings = {
             dateOverride: ['2017-06-11 09:30:01', 'local'],
@@ -32,7 +32,7 @@
         function handleVelvetInit() {
             console.log('Index.handleVelvetInit()')
             // sample date usage
-            var tunein = Velvet.get('game.date')
+            var tunein = Velvet.get('tune_in')
             var schedule = new DateSchedule({
                 target: new TzDate({
                     datetime: tunein.datetime,
