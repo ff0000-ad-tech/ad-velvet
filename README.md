@@ -55,23 +55,16 @@ Using this method, you will likely include Velvet Enabler via `<script>` tag, li
 
 <a name="guides"></a>
 
-The Velvet Enabler will manage the loading and accessibility to the data set in the Velvet Platform. With a few simple steps, you’ll be connected to your dynamic data.
+The Velvet Enabler will:
 
-From there, utilize the extra Date coding feature to help with time specific messaging, layouts and testing.
+- Manage loading Velvet data
+- Making it globally available to your ad
 
-### Including Velvet
-
-##### ES6
-
-##### Vanilla
-
-##### GWD
+From there, use the data-management features to help with time-specific messaging, layouts, and testing.
 
 ### Targeting Data
 
 Every audience target needs a different message. Build the ad to respond dynamically, then traffic an index telling Velvet which state of data to represent.
-
-(TODO: explain scheduling timeblocks)
 
 ##### Slugs
 
