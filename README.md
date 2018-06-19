@@ -12,6 +12,8 @@
 
 [Guides](#guides)
 
+[Examples](#examples)
+
 [Concepts](#concepts)
 
 [API](#api)
@@ -125,6 +127,16 @@ If you wish to only target a specific Ad Data for your creative, follow the same
 
 `INIT` - when the data is loaded and ready to be consumed
 
+### JSON Feeds & Getting Data
+
+Data is passed to the ad in the form of a JSON feed. Once it's loaded, you can access it with the following syntax:
+
+```javascript
+Velvet.get('json-key')
+```
+
+For more detail see the examples below.
+
 ### Adding Date Settings
 
 The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. It is optional and it does two things:
@@ -132,9 +144,11 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. I
 1.  Change the ad’s understanding of what “now” is. For testing, you can easily set the “now” time to the future or past to update the state of the ad.
 2.  Set the date-related messaging to another language. Velvet Enabler natively supports English and Spanish. There are ways to add other languages, which can be found in the docs.
 
-# Example Setup
+# Examples
 
-## Vanilla Javascript
+<a name="examples"></a>
+
+## Setup with Vanilla Javascript
 
 ```html
 <script id="velvet" src="../dist/velvet-enabler.js"></script>
@@ -179,13 +193,49 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. I
 </script>
 ```
 
-## ES6/Webpack/Babel
+## Getting Data
 
-Examples forthcoming.
+Ad Data from Velvet is JSON. An example looks like:
 
-## Google Web Designer
+```json
+{
+	"field": {
+		"type": "SingleLineText",
+		"value": "Test Text"
+	},
+	"clicktag": {
+		"type": "URL",
+		"value": "http://www.velvet.tech"
+	},
+	"tune_in": {
+		"type": "LocalizedDateTime",
+		"value": {
+			"timezone": "US/Eastern",
+			"datetime": "2018-12-13T00:00:00+00:00"
+		}
+	}
+}
+```
 
-Examples forthcoming.
+To access this data in your ad, consider the following:
+
+```javascript
+Velvet.get('field');
+// Test Text
+
+Velvet.get('clicktag');
+// http://www.velvet.tech
+
+Velvet.get('tune_in'):
+/*
+{
+    timezone: "US/Eastern",
+    datetime: "2018-12-13T00:00:00+00:00"
+}
+*/
+```
+
+For more advanced queries, check out the [API](#api) section.
 
 # Concepts
 
@@ -215,3 +265,7 @@ There are many others. How is Velvet different?
 <a name="api"></a>
 
 The source code of Velvet Enabler has code documentation, that can be found by at [FF0000 Ad Tech API - Docs](https://ff0000-ad-tech.github.io/ad-docs/). Search for `Velvet`.
+
+```
+
+```
