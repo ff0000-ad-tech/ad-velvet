@@ -39,17 +39,31 @@ Velvet-compatible ads include `velvet-enabler.js`, either compiled, inlined, or 
 
 #### NPM
 
-`npm install @ff0000-ad-tech/ad-velvet --save`
+```sh
+npm install @ff0000-ad-tech/ad-velvet --save
+```
 
-Path to the distribution via `./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js`.
+Path to the distribution via
 
-Or import with ES6 `import { Velvet } from '@ff0000-ad-tech/ad-velvet';`.
+```javascript
+'./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js'
+```
+
+Or import with ES6
+
+```javascript
+import { Velvet } from '@ff0000-ad-tech/ad-velvet'
+```
 
 #### Manual
 
 Browse to one of the [Javascript distributions](https://github.com/ff0000-ad-tech/ad-velvet/tree/feature/enabler/dist), copy-and-paste the code into a local file named `velvet-enabler.js`.
 
-Using this method, you will likely include Velvet Enabler via `<script>` tag, like `<script type="text/javascript" src="js/velvet-enabler.js"></script>`.
+Using this method, you will likely include Velvet Enabler via `<script>` tag, like
+
+```html
+<script type="text/javascript" src="js/velvet-enabler.js"></script>
+```
 
 ## Guides
 
