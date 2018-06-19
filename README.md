@@ -139,7 +139,16 @@ For more detail see the examples below.
 
 ### Adding Date Settings
 
-The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object. It is optional and it does two things:
+The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object.
+
+```javascript
+var dateSettings = {
+	dateOverride: ['2017-06-11 09:30:01', 'local'],
+	language: 'spanish'
+}
+```
+
+It is optional and it does two things:
 
 1.  Change the ad’s understanding of what “now” is. For testing, you can easily set the “now” time to the future or past to update the state of the ad.
 2.  Set the date-related messaging to another language. Velvet Enabler natively supports English and Spanish. There are ways to add other languages, which can be found in the docs.
