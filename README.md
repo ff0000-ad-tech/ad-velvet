@@ -43,7 +43,7 @@ Velvet-compatible ads include `velvet-enabler.js`, either compiled, inlined, or 
 npm install @ff0000-ad-tech/ad-velvet --save
 ```
 
-Include the distribution via:
+Include the distribution in your bundle via:
 
 ```javascript
 './node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js'
@@ -84,7 +84,7 @@ The Velvet Enabler will:
 
 - Manage loading Velvet data
 - Make the data globally available to your ad
-- Provide date-management features for testing time-specific messaging
+- Provide date/time management features for testing scheduled states
 
 ### Targeting Data
 
@@ -99,13 +99,19 @@ Slugs are codes used by your ad to identify different data states & request data
 - Segment
 - Ad-Data
 
+##### Find Slugs in Velvet Platform
+
+![Velvet Slug Route](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-slug-route.png)
+
+![Velvet Slugs](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-slugs.png)
+
 ##### Client & Locale
 
 Client & Locale slugs are always required. Segment & Ad-Data have different purposes:
 
 ###### Segment
 
-Segments will allow you to rotate Ad Data on a schedule. To find them, in Velvet, navigate to the `SEGMENTS` tab of your campaign, select the `JSON URLs` icon to get a pop-up. In the window will be a Slugs object. Copy and paste that into your `Velvet.init({ slugs })`.
+Segments will allow you to rotate Ad Data on a schedule. To find them, in Velvet, navigate to the `SEGMENTS` tab of your campaign, select the `JSON URLs` icon to get a pop-up. In the window will be a Slugs object. Copy and paste that into your `Velvet.init(__slugs-object__)`.
 
 ###### Ad Data
 
