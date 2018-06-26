@@ -248,6 +248,28 @@ Velvet.get('tune_in'):
 */
 ```
 
+## Capture
+
+Velvet has the ability to generate video and image captures of an ad with just a few API calls
+
+```javascript
+// OPTIONAL - add a [DateSchedule](https://github.com/ff0000-ad-tech/ad-dates/blob/master/lib/DateSchedule.js) for scheduled messaging changes
+Velvet.capture.addSchedule(myScheduleInstance)
+
+// OPTIONAL - add some custom data that gets passed to the ad via the query parameters
+Velvet.capture.addCustomData({ type:'yellow' })
+
+// Communicates that data has been consumed and pass that back. Even if no data has been added, this call must happen before adStart & adComplete
+Velvet.capture.dispatchData()
+
+// When loading is complete and the ad begins
+Velvet.capture.adStart()
+
+// When ad animation is complete and the ad has reached its final state
+Velvet.capture.adComplete()
+
+```
+
 For more advanced queries, check out the [API](#api) section.
 
 # Concepts
