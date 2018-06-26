@@ -48,13 +48,13 @@ npm install @ff0000-ad-tech/ad-velvet --save
 Include the distribution in your bundle via:
 
 ```javascript
-'./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js'
+"./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js";
 ```
 
 Or import with ES6:
 
 ```javascript
-import { Velvet } from '@ff0000-ad-tech/ad-velvet'
+import { Velvet } from "@ff0000-ad-tech/ad-velvet";
 ```
 
 #### GitHub
@@ -136,7 +136,7 @@ This will have the effect of "hard-coding" the ad to the selected Ad Data.
 Data is passed to the ad in the form of a JSON feed. Once it's loaded, you can access it with the following syntax:
 
 ```javascript
-Velvet.get('json-key')
+Velvet.get("json-key");
 ```
 
 For more detail see the [Examples](#examples) below.
@@ -147,9 +147,9 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object.
 
 ```javascript
 var dateSettings = {
-	dateOverride: ['2017-06-11 09:30:01', 'local'],
-	language: 'spanish'
-}
+  dateOverride: ["2017-06-11 09:30:01", "local"],
+  language: "spanish"
+};
 ```
 
 It is optional and it does two things:
@@ -212,21 +212,21 @@ Ad Data from Velvet is JSON. An example looks like:
 
 ```json
 {
-	"field": {
-		"type": "SingleLineText",
-		"value": "Test Text"
-	},
-	"clicktag": {
-		"type": "URL",
-		"value": "http://www.velvet.tech"
-	},
-	"tune_in": {
-		"type": "LocalizedDateTime",
-		"value": {
-			"timezone": "US/Eastern",
-			"datetime": "2018-12-13T00:00:00+00:00"
-		}
-	}
+  "field": {
+    "type": "SingleLineText",
+    "value": "Test Text"
+  },
+  "clicktag": {
+    "type": "URL",
+    "value": "http://www.velvet.tech"
+  },
+  "tune_in": {
+    "type": "LocalizedDateTime",
+    "value": {
+      "timezone": "US/Eastern",
+      "datetime": "2018-12-13T00:00:00+00:00"
+    }
+  }
 }
 ```
 
@@ -246,6 +246,27 @@ Velvet.get('tune_in'):
     datetime: "2018-12-13T00:00:00+00:00"
 }
 */
+```
+
+## Capture
+
+Velvet has the ability to generate video and image captures of an ad with just a few API calls. One aspect is working with [DateSchedule](https://github.com/ff0000-ad-tech/ad-dates/blob/master/lib/DateSchedule.js) to set up scheduled messaging and ad states.
+
+```javascript
+// OPTIONAL - add a DateSchedule for scheduled messaging changes
+Velvet.capture.addSchedule(myScheduleInstance);
+
+// OPTIONAL - add some custom data that gets passed to the ad via the query parameters
+Velvet.capture.addCustomData({ type: "yellow" });
+
+// Communicates that data has been consumed and pass that back. Even if no data has been added, this call must happen before adStart & adComplete
+Velvet.capture.dispatchData();
+
+// When loading is complete and the ad begins
+Velvet.capture.adStart();
+
+// When ad animation is complete and the ad has reached its final state
+Velvet.capture.adComplete();
 ```
 
 For more advanced queries, check out the [API](#api) section.
