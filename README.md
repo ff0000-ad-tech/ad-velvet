@@ -232,7 +232,7 @@ Ad Data from Velvet is JSON. An example looks like:
 
 A more detailed example can look like this:
 
-```json
+```javascript
 {
     matchups: {
         value: [
@@ -302,9 +302,9 @@ A more detailed example can look like this:
 ```
 
 In which case to access the values would be 
-``` javascript 
+
 ![Screenshot](console_data.png)
-```
+
 ## Capture
 
 Velvet has the ability to generate video and image captures of an ad with just a few API calls. One aspect is working with [DateSchedule](https://github.com/ff0000-ad-tech/ad-dates/blob/master/lib/DateSchedule.js) to set up scheduled messaging and ad states.
