@@ -59,7 +59,7 @@ import { Velvet } from "@ff0000-ad-tech/ad-velvet";
 
 #### GitHub
 
-Clone or download this repo. You will find the [Javascript distributions](https://github.com/ff0000-ad-tech/ad-velvet/tree/feature/enabler/dist) at this path `ad-velvet/dist`.
+Clone or download this repo. Use the dist folder. You will find the [Javascript distributions](https://github.com/ff0000-ad-tech/ad-velvet/tree/feature/enabler/dist) at this path `ad-velvet/dist`.
 
 Using this method, you will likely include Velvet Enabler via `<script>` tag, like
 
