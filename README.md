@@ -35,7 +35,7 @@ Velvet Ads can be built according to your preference:
 # Getting Started
 
 <a name="getting-started"></a>
-Models for "Ad Data" are built using the Velvet Platform. For this, you will need a Velvet account. Go to https://www.velvet.tech/ for more information.  Once you have an account, you will need to create a campaign, an ad template, collections, and ad data.
+Models for "Ad Data" are built using the Velvet Platform. For this, you will need a Velvet account. Go to https://www.velvet.tech/ for more information. Once you have an account, you will need to create a campaign, an ad template, collections, and ad data.
 
 Velvet-compatible ads include `velvet-enabler.js`, either compiled, inlined, or as a script load. How you get that file depends on your packaging work-flow. We recommend NPM.
 
@@ -48,13 +48,13 @@ npm install @ff0000-ad-tech/ad-velvet --save
 Include the distribution in your bundle via:
 
 ```javascript
-"./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js";
+'./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js'
 ```
 
 Or import with ES6:
 
 ```javascript
-import { Velvet } from "@ff0000-ad-tech/ad-velvet";
+import { Velvet } from '@ff0000-ad-tech/ad-velvet'
 ```
 
 #### GitHub
@@ -136,7 +136,7 @@ This will have the effect of "hard-coding" the ad to the selected Ad Data.
 Data is passed to the ad in the form of a JSON feed. Once it's loaded, you can access it with the following syntax:
 
 ```javascript
-Velvet.get("json-key");
+Velvet.get('json-key')
 ```
 
 For more detail see the [Examples](#examples) below.
@@ -147,9 +147,9 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object.
 
 ```javascript
 var dateSettings = {
-  dateOverride: ["2017-06-11 09:30:01", "local"],
-  language: "spanish"
-};
+	dateOverride: ['2017-06-11 09:30:01', 'local'],
+	language: 'spanish'
+}
 ```
 
 It is optional and it does two things:
@@ -209,28 +209,6 @@ It is optional and it does two things:
 ## Getting Data
 
 Ad Data from Velvet is JSON. An example looks like:
-
-```json
-{
-  "field": {
-    "type": "SingleLineText",
-    "value": "Test Text"
-  },
-  "clicktag": {
-    "type": "URL",
-    "value": "http://www.velvet.tech"
-  },
-  "tune_in": {
-    "type": "LocalizedDateTime",
-    "value": {
-      "timezone": "US/Eastern",
-      "datetime": "2018-12-13T00:00:00+00:00"
-    }
-  }
-}
-```
-
-A more detailed example can look like this:
 
 ```javascript
 {
@@ -301,13 +279,28 @@ A more detailed example can look like this:
 }
 ```
 
-In which case to access the values would be 
+In which case, queries for data would look like:
+
+````
+/* TODO: Elaine
+    1. Remove the DateSchedule example from this section...focus just on the various ways to obtain data
+    2. Start with unsuccesful attempts to get the tuneIn object
+    3. Then the matchups list
+    4. Then the 0-index tunein object, make sure to assign it to `var tunein = Velvet.get('matchups.0.tunein')`, so the next two examples make sense
+    5. Then get datetime from the tunein
+    6. Then get timezone from tunein
+
+    Also, please remove the objects that don't reinforce the concepts that your examples are communicating. Ex: the away, home objects.
+*/
 
 ![Screenshot](console_data.png)
 
+For more advanced queries, check out the [API](#api) section.
+
+
 ## Capture
 
-Velvet has the ability to generate video and image captures of an ad with just a few API calls. One aspect is working with [DateSchedule](https://github.com/ff0000-ad-tech/ad-dates/blob/master/lib/DateSchedule.js) to set up scheduled messaging and ad states.
+Velvet has the ability to generate video and image captures of an ad with just a few API calls. One aspect is working with [DateSchedule](https://ff0000-ad-tech.github.io/ad-docs/pages/DateSchedule.html) to set up scheduled messaging and ad states.
 
 ```javascript
 // OPTIONAL - add a DateSchedule for scheduled messaging changes
@@ -324,9 +317,7 @@ Velvet.capture.adStart();
 
 // When ad animation is complete and the ad has reached its final state
 Velvet.capture.adComplete();
-```
-
-For more advanced queries, check out the [API](#api) section.
+````
 
 # Concepts
 
