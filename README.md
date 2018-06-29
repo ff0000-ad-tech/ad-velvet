@@ -234,19 +234,6 @@ Ad Data from Velvet is JSON. An example looks like:
 
 In which case, queries for data would look like:
 
-```
-/* TODO: Elaine
-    1. Remove the DateSchedule example from this section...focus just on the various ways to obtain data
-    2. Start with unsuccesful attempts to get the tuneIn object
-    3. Then the matchups list
-    4. Then the 0-index tunein object, make sure to assign it to `var tunein = Velvet.get('matchups.0.tunein')`, so the next two examples make sense
-    5. Then get datetime from the tunein
-    6. Then get timezone from tunein
-
-    Also, please remove the objects that don't reinforce the concepts that your examples are communicating. Ex: the away, home objects.
-*/
-```
-
 ![Screenshot](console_data.png)
 
 For more advanced queries, check out the [API](#api) section.
