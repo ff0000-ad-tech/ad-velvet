@@ -281,7 +281,7 @@ Ad Data from Velvet is JSON. An example looks like:
 
 In which case, queries for data would look like:
 
-````
+```
 /* TODO: Elaine
     1. Remove the DateSchedule example from this section...focus just on the various ways to obtain data
     2. Start with unsuccesful attempts to get the tuneIn object
@@ -292,6 +292,7 @@ In which case, queries for data would look like:
 
     Also, please remove the objects that don't reinforce the concepts that your examples are communicating. Ex: the away, home objects.
 */
+```
 
 ![Screenshot](console_data.png)
 
