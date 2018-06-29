@@ -236,65 +236,18 @@ A more detailed example can look like this:
 {
     matchups: {
         value: [
-        {
-        tuneIn: {
-            value: {
-                timezone: "US/Pacific",
-                datetime: "2018-06-26T18:00:00+00:00"
-            },
-            type: "LocalizedDateTime"
-        },
-        liveURL: {
-            value: "https://www.fifa.com/worldcup/matches/  match/300331534/#match-liveblog",
-            type: "URL"
-        },
-        away: {
-            value: {
-                name: {
-                    value: "Argentina",
-                    type: "SingleLineText"
+            {
+            tuneIn: {
+                value: {
+                    timezone: "US/Pacific",
+                    datetime: "2018-06-26T18:00:00+00:00"
                 },
-                flag: {
-                    value: {
-                    url: "https://us-east.manta.joyent.com/adtech/public/ad_manager/clients/zJfUigQUn0/collections/ZbTnj89szh/argentina_flag_JBahN6h8YL.png",
-                    name: "argentina_flag.png",
-                    content_type: "image/png"
-                },
-                type: "Image"
+                type: "LocalizedDateTime"
             },
-                rank: {
-                    value: "2",
-                    type: "SingleLineText"
-                }
+            liveURL: {
+                value: "https://www.fifa.com/worldcup/matches/  match/300331534/#match-liveblog",
+                type: "URL"
             },
-            type: "CollectionSingleItem"
-        },
-        home: {
-            value: {
-                name: {
-                    value: "Nigeria",
-                    type: "SingleLineText"
-                        },
-                        flag: {
-                            value: {
-                                url: "https://us-east.manta.joyent.com/adtech/public/ad_manager/clients/zJfUigQUn0/collections/YweJnXduXz/nigeria_flag_GB7fTCXMmq.png",
-                                name: "nigeria_flag.png",
-                                content_type: "image/png"
-                            },
-                            type: "Image"
-                        },
-                        rank: {
-                            value: "3",
-                            type: "SingleLineText"
-                        }
-                    },
-                    type: "CollectionSingleItem"
-                },
-                upcomingURL: {
-                    value: "https://www.fifa.com/worldcup/matches/",
-                    type: "URL"
-                }
-            }
         ],
         type: "CollectionMultiItem"
     }
