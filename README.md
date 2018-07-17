@@ -257,7 +257,8 @@ To use Velvet Capture, build an HTML unit for Velvet, rather than unique Photosh
 The following API calls demonstrate the required Capture setup: 
 
 ```javascript
-// Communicates that data has been consumed and pass that back. Even if no data has been added, this call must happen before adStart & adComplete
+// Communicates that data has been consumed and pass that back. 
+// Even if no data has been added, this call must happen before adStart & adComplete
 Velvet.capture.dispatchData();
 
 // When loading is complete and the ad begins
