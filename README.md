@@ -35,7 +35,7 @@ Velvet Ads can be built according to your preference:
 # Getting Started
 
 <a name="getting-started"></a>
-Models for "Ad Data" are built using the Velvet Platform. For this, you will need a Velvet account. Go to https://www.velvet.tech/ for more information.
+Models for "Ad Data" are built using the Velvet Platform. For this, you will need a Velvet account. Go to https://www.velvet.tech/ for more information. Once you have an account, you will need to create a campaign, an ad template, collections, and ad data.
 
 Velvet-compatible ads include `velvet-enabler.js`, either compiled, inlined, or as a script load. How you get that file depends on your packaging work-flow. We recommend NPM.
 
@@ -48,18 +48,18 @@ npm install @ff0000-ad-tech/ad-velvet --save
 Include the distribution in your bundle via:
 
 ```javascript
-"./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js";
+'./node_modules/@ff0000-ad-tech/ad-velvet/dist/velvet-enabler.js'
 ```
 
 Or import with ES6:
 
 ```javascript
-import { Velvet } from "@ff0000-ad-tech/ad-velvet";
+import { Velvet } from '@ff0000-ad-tech/ad-velvet'
 ```
 
 #### GitHub
 
-Clone or download this repo. You will find the [Javascript distributions](https://github.com/ff0000-ad-tech/ad-velvet/tree/feature/enabler/dist) at this path `ad-velvet/dist`.
+Clone or download this repo. Use the dist folder only if you are using vanilla javascript. You will find the [Javascript distributions](https://github.com/ff0000-ad-tech/ad-velvet/tree/feature/enabler/dist) at this path `ad-velvet/dist`.
 
 Using this method, you will likely include Velvet Enabler via `<script>` tag, like
 
@@ -136,7 +136,7 @@ This will have the effect of "hard-coding" the ad to the selected Ad Data.
 Data is passed to the ad in the form of a JSON feed. Once it's loaded, you can access it with the following syntax:
 
 ```javascript
-Velvet.get("json-key");
+Velvet.get('json-key')
 ```
 
 For more detail see the [Examples](#examples) below.
@@ -147,9 +147,9 @@ The second argument of `Velvet.init(arg1, arg2)` is the `dateSettings` object.
 
 ```javascript
 var dateSettings = {
-  dateOverride: ["2017-06-11 09:30:01", "local"],
-  language: "spanish"
-};
+	dateOverride: ['2017-06-11 09:30:01', 'local'],
+	language: 'spanish'
+}
 ```
 
 It is optional and it does two things:
@@ -210,43 +210,33 @@ It is optional and it does two things:
 
 Ad Data from Velvet is JSON. An example looks like:
 
-```json
-{
-  "field": {
-    "type": "SingleLineText",
-    "value": "Test Text"
-  },
-  "clicktag": {
-    "type": "URL",
-    "value": "http://www.velvet.tech"
-  },
-  "tune_in": {
-    "type": "LocalizedDateTime",
-    "value": {
-      "timezone": "US/Eastern",
-      "datetime": "2018-12-13T00:00:00+00:00"
-    }
-  }
-}
-```
-
-To access this data in your ad, consider the following:
-
 ```javascript
-Velvet.get('field');
-// Test Text
-
-Velvet.get('clicktag');
-// http://www.velvet.tech
-
-Velvet.get('tune_in'):
-/*
 {
-    timezone: "US/Eastern",
-    datetime: "2018-12-13T00:00:00+00:00"
+    matchups: {
+        value: [
+            {
+            tuneIn: {
+                value: {
+                    timezone: "US/Pacific",
+                    datetime: "2018-06-26T18:00:00+00:00"
+                },
+                type: "LocalizedDateTime"
+            },
+            liveURL: {
+                value: "https://www.fifa.com/worldcup/matches/  match/300331534/#match-liveblog",
+                type: "URL"
+            },
+        ],
+        type: "CollectionMultiItem"
+    }
 }
-*/
 ```
+
+In which case, queries for data would look like:
+
+![Screenshot](console_data.jpg)
+
+For more advanced queries, check out the [API](#api) section.
 
 ## Capture
 
@@ -254,28 +244,28 @@ Velvet can generate video and image captures of an ad. This is a very powerful f
 
 To use Velvet Capture, build an HTML unit for Velvet, rather than unique Photoshop & After Effects projects for each.
 
-The following API calls demonstrate the required Capture setup: 
+The following API calls demonstrate the required Capture setup:
 
 ```javascript
-// Communicates that data has been consumed and pass that back. 
+// Communicates that data has been consumed and pass that back.
 // Even if no data has been added, this call must happen before adStart & adComplete
-Velvet.capture.dispatchData();
+Velvet.capture.dispatchData()
 
 // When loading is complete and the ad begins
-Velvet.capture.adStart();
+Velvet.capture.adStart()
 
 // When ad animation is complete and the ad has reached its final state
-Velvet.capture.adComplete();
+Velvet.capture.adComplete()
 ```
 
 Another Capture aspect is working with [DateSchedule](https://github.com/ff0000-ad-tech/ad-dates/blob/master/lib/DateSchedule.js) to set up scheduled messaging and ad states:
 
 ```javascript
 // OPTIONAL - add a DateSchedule for scheduled messaging changes
-Velvet.capture.addSchedule(myScheduleInstance);
+Velvet.capture.addSchedule(myScheduleInstance)
 
 // OPTIONAL - add some custom data that gets passed to the ad via the query parameters
-Velvet.capture.addCustomData({ type: "yellow" });
+Velvet.capture.addCustomData({ type: 'yellow' })
 ```
 
 For more advanced queries, check out the [API](#api) section.
