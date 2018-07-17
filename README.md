@@ -250,15 +250,13 @@ Velvet.get('tune_in'):
 
 ## Capture
 
-Velvet has the ability to generate video and image captures of an ad with just a few API calls. One aspect is working with [DateSchedule](https://github.com/ff0000-ad-tech/ad-dates/blob/master/lib/DateSchedule.js) to set up scheduled messaging and ad states.
+Velvet can generate video and image captures of an ad. This is a very powerful feature, when you need to generate a lots of static assets with different creative, messaging, and tune-ins.
+
+To use Velvet Capture, build an HTML unit for Velvet, rather than unique Photoshop & After Effects projects for each.
+
+The following API calls demonstrate the required Capture setup: 
 
 ```javascript
-// OPTIONAL - add a DateSchedule for scheduled messaging changes
-Velvet.capture.addSchedule(myScheduleInstance);
-
-// OPTIONAL - add some custom data that gets passed to the ad via the query parameters
-Velvet.capture.addCustomData({ type: "yellow" });
-
 // Communicates that data has been consumed and pass that back. Even if no data has been added, this call must happen before adStart & adComplete
 Velvet.capture.dispatchData();
 
@@ -267,6 +265,16 @@ Velvet.capture.adStart();
 
 // When ad animation is complete and the ad has reached its final state
 Velvet.capture.adComplete();
+```
+
+Another Capture aspect is working with [DateSchedule](https://github.com/ff0000-ad-tech/ad-dates/blob/master/lib/DateSchedule.js) to set up scheduled messaging and ad states:
+
+```javascript
+// OPTIONAL - add a DateSchedule for scheduled messaging changes
+Velvet.capture.addSchedule(myScheduleInstance);
+
+// OPTIONAL - add some custom data that gets passed to the ad via the query parameters
+Velvet.capture.addCustomData({ type: "yellow" });
 ```
 
 For more advanced queries, check out the [API](#api) section.
