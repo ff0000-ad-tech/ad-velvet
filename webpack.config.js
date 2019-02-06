@@ -57,7 +57,10 @@ module.exports = config => {
 					path: `./tmpl/velvet-enabler.js`
 				},
 				inject: {
-					'ad-dates': path.resolve(__dirname, 'node_modules/@ff0000-ad-tech/ad-dates/dist/ad-dates.' + config.environment + '.js'),
+					'ad-dates': path.resolve(
+						__dirname,
+						'node_modules/@ff0000-ad-tech/ad-dates/dist/ad-dates.' + config.environment + '.js'
+					),
 					Velvet: './bundles/Velvet.' + config.environment + '.js'
 				},
 				output: {
@@ -80,7 +83,7 @@ module.exports = config => {
 				},
 				{
 					test: request => {
-						console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request.split('1-build')[1])
+						// console.log('test()', request.includes('ad-velvet'), request.endsWith('index.js'), '|', request.split('1-build')[1])
 						return request.includes('ad-velvet') && request.endsWith('index.js')
 					},
 					use: [
