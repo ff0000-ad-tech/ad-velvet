@@ -28,9 +28,9 @@ This project includes the frontend for the Velvet CMP -- it enables creative uni
 
 Velvet Ads can be built according to your preference:
 
-- NPM / ES6 / Webpack
-- Vanilla Javascript
-- Google Web Designer
+-   NPM / ES6 / Webpack
+-   Vanilla Javascript
+-   Google Web Designer
 
 # Getting Started
 
@@ -71,8 +71,8 @@ Using this method, you will likely include Velvet Enabler via `<script>` tag, li
 
 There are 2 distributions:
 
-- `velvet-enabler.js` - completely obfuscated/minified and generates no console output.
-- `velvet-enabler.debug.js` - has console output.
+-   `velvet-enabler.js` - completely obfuscated/minified and generates no console output.
+-   `velvet-enabler.debug.js` - has console output.
 
 For sanity while developing, use the "debug" version. Velvet events are logged in the browser console.
 
@@ -84,9 +84,9 @@ For optimized delivery, use the production version, which is 5k smaller.
 
 The Velvet Enabler will:
 
-- Manage loading Velvet data
-- Make the data globally available to your ad
-- Provide date/time management features for testing scheduled states
+-   Manage loading Velvet data
+-   Make the data globally available to your ad
+-   Provide date/time management features for testing scheduled states
 
 ### Targeting Data
 
@@ -96,10 +96,10 @@ Every audience target needs a different message. Build the ad to respond dynamic
 
 Slugs are codes used by your ad to identify Velvet data. They correspond to:
 
-- Client
-- Locale
-- Segment
-- Ad-Data
+-   Client
+-   Locale
+-   Segment
+-   Ad-Data
 
 #### Get Slugs from Velvet Platform
 
@@ -166,43 +166,43 @@ It is optional and it does two things:
 ```html
 <script id="velvet" src="../dist/velvet-enabler.js"></script>
 <script type="text/javascript">
-    var slugs = {
-        client: "3YLOU2j85h",
-        locale: "ZFe1JLxvBk",
-        segment: "G5iUcOa2iG",
-        addata: "9KyAwgTg1O"
-    };
-    var dateSettings = {
-        dateOverride: ['2017-06-11 09:30:01', 'local'],
-        language: 'spanish'
-    };
+	var slugs = {
+		client: '3YLOU2j85h',
+		locale: 'ZFe1JLxvBk',
+		segment: 'G5iUcOa2iG',
+		addata: '9KyAwgTg1O'
+	}
+	var dateSettings = {
+		dateOverride: ['2017-06-11 09:30:01', 'local'],
+		language: 'spanish'
+	}
 
-    function useStatic() {
-        console.log("Index.useStatic()");
-    }
-    function failAd() {
-        console.log("Index.failAd()");
-        useStatic();
-    }
-    function handleVelvetInit() {
-        console.log('Index.handleVelvetInit()');
-        // sample get data and date schedule usage
-        var tunein = Velvet.get('game.date');
-        var schedule = new DateSchedule({
-            target: new TzDate({
-                datetime: tunein.datetime,
-                outputTimezone: tunein.timezone
-            }),
-            isStandard: true
-        });
-        schedule.print();
-    }
+	function useStatic() {
+		console.log('Index.useStatic()')
+	}
+	function failAd() {
+		console.log('Index.failAd()')
+		useStatic()
+	}
+	function handleVelvetInit() {
+		console.log('Index.handleVelvetInit()')
+		// sample get data and date schedule usage
+		var tunein = Velvet.get('game.date')
+		var schedule = new DateSchedule({
+			target: new TzDate({
+				datetime: tunein.datetime,
+				outputTimezone: tunein.timezone
+			}),
+			isStandard: true
+		})
+		schedule.print()
+	}
 
-    Velvet.addEventListener(Velvet.events.FAIL, failAd);
-    Velvet.addEventListener(Velvet.events.STATIC, useStatic);
-    Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit);
+	Velvet.addEventListener(Velvet.events.FAIL, failAd)
+	Velvet.addEventListener(Velvet.events.STATIC, useStatic)
+	Velvet.addEventListener(Velvet.events.INIT, handleVelvetInit)
 
-    Velvet.init(slugs, dateSettings);
+	Velvet.init(slugs, dateSettings, '300x250')
 </script>
 ```
 
@@ -280,9 +280,9 @@ Building out ads for all of those targets can be an exhausting process, due to t
 
 Content Management Platforms (CMP's) are the mechanism that help brand managers organize this volume, while reducing the number of builds necessary to produce those targets. Some popular options are:
 
-- DoubleClick Studio (Google Dynamic Content)
-- Flashtalking
-- Sizmek
+-   DoubleClick Studio (Google Dynamic Content)
+-   Flashtalking
+-   Sizmek
 
 There are many others. How is Velvet different?
 
