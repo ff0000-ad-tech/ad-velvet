@@ -36,12 +36,12 @@ Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logi
 
 **<font style="color:blue;">Fig 1.1.</font>** Approve content (must be approved before being published)
 
-<div style="margin-left: 60px"><img width=45 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the Locale level ( <font style="color:red; font-weight: bold;">C.</font> or <font style="color:magenta; font-weight: bold;">d.1</font>), although the button may exist at the <font style="font-weight:bold;">Segment</font> or <font style="font-weight:bold;">Time Block</font> level - they all do the same thing: publish the <font style="font-weight:bold;">Locale</font></div>
+<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the Locale level ( <font style="color:red;"><strong>C</strong>.</font> or <font style="color:magenta;"><strong>d.1</strong></font>), although the button may exist at the <font style=""><strong>Segment</strong></font> or <font style=""><strong>Time Bloc</strong>k</font> level - they all do the same thing: publish the <font style=""><strong>Locale</strong></font></div>
 <br>
 
 **<font style="color:blue;">Fig 1.2.</font>** Preview Content
 
-<div style="margin-left: 60px"><img width=45 src="images/velvet_nav_preview.jpg" /> the eye will appear active when creative (HTML) has been uploaded</div>
+<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_preview.jpg" /> the eye will appear active when creative (HTML) has been uploaded</div>
 <br>
 
 **<font style="color:blue;">Fig 1.3.</font>** Clone - make a duplicate of the content (**Locale** / **Template** / **Ad Data**) that will be independent from its original version
@@ -50,9 +50,9 @@ Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logi
 
 **<font style="color:blue;">Fig 1.5.</font>** Delete the current location
 
-**<font style="color:blue;">Fig 1.6.</font>** URLs - the slug, preview paths, and live paths used by the current item (<font style="font-weight:bold;">Segment</font> or <font style="font-weight:bold;">Ad Data</font>)
+**<font style="color:blue;">Fig 1.6.</font>** URLs - the slug, preview paths, and live paths used by the current item (<font style=""><strong>Segment</strong></font> or <font style=""><strong>Ad Data</strong></font>)
 
-<div style="margin-left: 60px"><img width=420 src="images/velvet_nav_urls.jpg" /></div>
+<div style="margin-left: 60px"><img src="images/velvet_nav_urls.jpg" /></div>
 
 **<font style="color:blue;">Fig 1.7.</font>** Edit Template - go to the template assigned to this Ad Data's locale and adjust as needed
 
@@ -62,8 +62,8 @@ Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logi
 
 
 
-Many of these functions from <font style="color:blue; font-weight: bold;">Fig 1.1</font> - <font style="color:blue; font-weight: bold;">Fig 1.9</font> are also also available inline for each item listed per **Locale**, **Segment**, or **Ad Data**.
-Sometimes icons such, as <font style="color:blue; font-weight: bold;">Fig 1.6</font>'s URLs icon, for a page and not part of the list.
+Many of these functions from <font style="color:blue;"><strong>Fig 1.1</strong></font> - <font style="color:blue;"><strong>Fig 1.9</strong></font> are also also available inline for each item listed per **Locale**, **Segment**, or **Ad Data**.
+Sometimes icons such, as <font style="color:blue;"><strong>Fig 1.6</strong></font>'s URLs icon, for a page and not part of the list.
 This happens when the list item - such as a Time Block - doesn't have unique URL information
 
 <br>
@@ -76,17 +76,17 @@ This happens when the list item - such as a Time Block - doesn't have unique URL
 
 **<font style="color:#008000;">Fig 2.a.</font>** Preview the Ad Data
 
-<div style="margin-left: 60px">As with <font style="color:red; font-weight: bold;">Fig 1.2</font> the icon will appear active only when a creative (HTML) has been uploaded</div>
+<div style="margin-left: 60px">As with <font style="color:red;"><strong>Fig 1.2</strong></font> the icon will appear active only when a creative (HTML) has been uploaded</div>
 <br>
 
 **<font style="color:#008000;">Fig 2.b.</font>** Generate Statics
 
-<div style="margin-left: 60px"><img width=45 src="images/velvet_nav_capture_static.jpg" /> the camera will appear active as long as the uploaded creative has the feature selected<br><img width=400 src="images/velvet_nav_enable_static.jpg" /></div>
+<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_capture_static.jpg" /> the camera will appear active as long as the uploaded creative has the feature selected<br><img width=413 src="images/velvet_nav_enable_static.jpg" /></div>
 <br>
 
 **<font style="color:#008000;">Fig 2.c.</font>** Generate Videos
 
-<div style="margin-left: 60px">Like statics, the icon's activity is dependant on if the creative has the feature selected<br><img width=400 src="images/velvet_nav_enable_video.jpg" /></div>
+<div style="margin-left: 60px">Like statics, the icon's activity is dependant on if the creative has the feature selected<br><img width=413 src="images/velvet_nav_enable_video.jpg" /></div>
 <br>
 
 **<font style="color:#008000;">Fig 2.d.</font>** URLs - the slug, preview paths, and live paths used by the current item (Segment or Ad Data)
@@ -99,4 +99,4 @@ This happens when the list item - such as a Time Block - doesn't have unique URL
 
 **<font style="color:#008000;">Fig 2.h.</font>** Approve content (must be approved before being published)
 
-<div style="margin-left: 60px"><img width=45 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the <font style="font-weight: bold;">Locale</font> level (<font style="color:red; font-weight: bold;"> Fig 1.C.</font> or <font style="color:magenta; font-weight: bold;">Fig 1.d.1</font>)</div>
+<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the <font style=""><strong>Locale</strong></font> level (<font style="color:red;"><strong> Fig 1.C.</strong></font> or <font style="color:magenta;"><strong>Fig 1.d.1</strong></font>)</div>
