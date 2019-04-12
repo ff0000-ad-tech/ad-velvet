@@ -1,8 +1,8 @@
-This is a general overview for what the Navigation and most common principle UI of Velvet is. The example shown in the Fig 1 is all the way down into the Ad Data level.
+This is a general overview for what the Navigation and most common principle UI of Velvet is. The example shown in the **Fig 1** is all the way down into the Ad Data level.
 
-# <b>Fig 1.</b> 
+# **Fig 1.**
 ## ![Velvet Navigation](images/velvet_nav_navigation_adData.jpg)
-Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logic remains consistent: <b>A</b> = <b>b.1</b> , <b>B</b> = <b>c.1</b> , <b>C</b> = <b>d.1</b> , etc
+Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logic remains consistent: **A** = **b.1** , **B** = **c.1** , **C** = **d.1** , etc
 
 
 <dl>
