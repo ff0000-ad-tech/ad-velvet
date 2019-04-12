@@ -1,102 +1,101 @@
 This is a general overview for what the Navigation and most common principle UI of Velvet is. The example shown in the Fig 1 is all the way down into the Ad Data level.
 
-# **Fig 1.**
+# <b>Fig 1.</b>
 ## ![Velvet Navigation](images/velvet_nav_navigation_adData.jpg)
-Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logic remains consistent: **<font style="color:red;">A</font>** = **<font style="color:magenta;">b.1</font>**, **<font style="color:red;">B</font>** = **<font style="color:magenta;">c.1</font>**, **<font style="color:red;">C</font>**= **<font style="color:magenta;">d.1</font>**, etc
+Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logic remains consistent: <b>A</b>= <b>b.1</b>, <b>B</b>= <b>c.1</b>, <b>C</b>= <b>d.1</b>, etc
 
 
+<dl>
+<dt><b>Fig 1.A.</b> (<i>Client name</i>) or <b>Fig 1.b.1</b>- Return to the root <b>Clients</b> menu containing all available <b>Campaigns</b> for the <b>Client<b></dt>
 
-**<font style="color:red;">Fig 1.A.</font>** (*Client name*) or **<font style="color:magenta;">Fig 1.b.1</font>** - Return to the root **Campaigns** menu containing all available **Campaigns** for the client
-
-<div style="margin-left: 60px"><img width=728 src="images/velvet_nav_campaigns.jpg" /></div>
+<dd><img width=728 src="images/velvet_nav_campaigns.jpg" /></dd>
 <br>
 
-**<font style="color:red;">Fig 1.B.</font>** (*Campaign name*) or **<font style="color:magenta;">Fig 1.c.1</font>** - Return to the root level of the **Campaign**, which has that **Campaign**'s **Locale**, **Template**, and **Creative** information
+<dt><b>Fig 1.B.</b>(<i>Campaign name</i>) or <b>Fig 1.c.1</b>- Return to the root level of the <b>Campaign</b>, which has that <b>Campaign<b>'s <b>Locale</b>, <b>Template</b>, and <b>Creative</b>information</dt>
 
-<div style="margin-left: 60px"><img width=728 src="images/velvet_nav_campaign_locales.jpg" /></div>
+<dd><img width=728 src="images/velvet_nav_campaign_locales.jpg" /></dd>
 <br>
 
-**<font style="color:red;">Fig 1.C.</font>** (*Locale name*) or **<font style="color:magenta;">Fig 1.d.1</font>** - Return to the root level of that **Locale**, which has that **Campaign**'s **Ad Data** and **Segments**
+<dt><b>Fig 1.C.</b>(<i>Locale name</i>) or <b>Fig 1.d.1</b>- Return to the root level of that <b>Locale</b>, which has that <b>Locale<b>'s <b>Ad Data</b>and <b>Segments<b></dt>
 
-<div style="margin-left: 60px"><img width=728 src="images/velvet_nav_locales.jpg" /></div>
+<dd><img width=728 src="images/velvet_nav_locales.jpg" /></dd>
 <br>
 
-**<font style="color:red;">Fig 1.D.</font>** (*Current Content name*) Navigate to the content you're currently looking at
+<b>Fig 1.D.</b>(<i>Current Content name</i>) Navigate to the content you're currently looking at
+</dl>
 
-**<font style="color:red;">Fig 1.E.</font>** No function - describes the process you're currently undertaking (editing an **Ad Data** in this case)
+<b>Fig 1.E.</b>No function - describes the process you're currently undertaking (editing an <b>Ad Data</b>in this case)
 
-**<font style="color:red;">Fig 1.F.</font>** The state of your **Ad Data**. Can be *UNPUBLISHED*, *APPROVED*, or *PUBLISHED*
+<b>Fig 1.F.</b>The state of your <b>Ad Data<b>. Can be <i>UNPUBLISHED<i>, <i>APPROVED<i>, or <i>PUBLISHED<i>
 
-<div style="margin-left: 60px;">
-    <img src='images/velvet_nav_unpublished.jpg'/> - Approved<br>
-    <img src='images/velvet_nav_published.jpg' /> - Published
-</div>
 
+<img src='images/velvet_nav_unpublished.jpg'/> - Approved<br>
+<img src='images/velvet_nav_published.jpg' /> - Published
+
+
+<b>Fig 1.1.</b>Approve content (must be approved before being published)
+
+<img width=46 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the Locale level ( <b>C</b>. or <b>d.1</b>), although the button may exist at the <font style=""><b>Segment</b> or <font style=""><b>Time Bloc</b>k level - they all do the same thing: publish the <font style=""><b>Locale</b>
 <br>
 
-**<font style="color:blue;">Fig 1.1.</font>** Approve content (must be approved before being published)
+<b>Fig 1.2.</b>Preview Content
 
-<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the Locale level ( <font style="color:red;"><strong>C</strong>.</font> or <font style="color:magenta;"><strong>d.1</strong></font>), although the button may exist at the <font style=""><strong>Segment</strong></font> or <font style=""><strong>Time Bloc</strong>k</font> level - they all do the same thing: publish the <font style=""><strong>Locale</strong></font></div>
+<img width=46 src="images/velvet_nav_preview.jpg" /> the eye will appear active when creative (HTML) has been uploaded
 <br>
 
-**<font style="color:blue;">Fig 1.2.</font>** Preview Content
+<b>Fig 1.3.</b>Clone - make a duplicate of the content (<b>Locale</b>/ <b>Template</b>/ <b>Ad Data<b>) that will be independent from its original version
 
-<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_preview.jpg" /> the eye will appear active when creative (HTML) has been uploaded</div>
-<br>
+<b>Fig 1.4.</b>Archive the current location
 
-**<font style="color:blue;">Fig 1.3.</font>** Clone - make a duplicate of the content (**Locale** / **Template** / **Ad Data**) that will be independent from its original version
+<b>Fig 1.5.</b>Delete the current location
 
-**<font style="color:blue;">Fig 1.4.</font>** Archive the current location
+<b>Fig 1.6.</b>URLs - the slug, preview paths, and live paths used by the current item (<font style=""><b>Segment</b> or <font style=""><b>Ad Data</b>)
 
-**<font style="color:blue;">Fig 1.5.</font>** Delete the current location
+<img src="images/velvet_nav_urls.jpg" />
 
-**<font style="color:blue;">Fig 1.6.</font>** URLs - the slug, preview paths, and live paths used by the current item (<font style=""><strong>Segment</strong></font> or <font style=""><strong>Ad Data</strong></font>)
+<b>Fig 1.7.</b>Edit Template - go to the template assigned to this Ad Data's locale and adjust as needed
 
-<div style="margin-left: 60px"><img src="images/velvet_nav_urls.jpg" /></div>
+<b>Fig 1.8.</b>Reset the current content
 
-**<font style="color:blue;">Fig 1.7.</font>** Edit Template - go to the template assigned to this Ad Data's locale and adjust as needed
-
-**<font style="color:blue;">Fig 1.8.</font>** Reset the current <span style="color:red;">content</span>
-
-**<font style="color:blue;">Fig 1.9.</font>** Save the current content (**Ad Data** / **Segment** / **Time Block** / **Creative** / **Campaign** / **Template**)
+<b>Fig 1.9.</b>Save the current content (<b>Ad Data</b>/ <b>Segment</b>/ <b>Time Block</b>/ <b>Creative</b>/ <b>Campaign</b>/ <b>Template<b>)
 
 
 
-Many of these functions from <font style="color:blue;"><strong>Fig 1.1</strong></font> - <font style="color:blue;"><strong>Fig 1.9</strong></font> are also also available inline for each item listed per **Locale**, **Segment**, or **Ad Data**.
-Sometimes icons such, as <font style="color:blue;"><strong>Fig 1.6</strong></font>'s URLs icon, for a page and not part of the list.
-This happens when the list item - such as a **Time Block** - doesn't have unique URL information
+Many of these functions from <b>Fig 1.1</b> - <b>Fig 1.9</b> are also also available inline for each item listed per <b>Locale</b>, <b>Segment</b>, or <b>Ad Data<b>.
+Sometimes icons such, as <b>Fig 1.6</b>'s URLs icon, for a page and not part of the list.
+This happens when the list item - such as a Time Block</b>- doesn't have unique URL information
 
 <br>
 <br>
 
-# **Fig 2.**
+# <b>Fig 2.</b>
 ## ![Velvet Navigation](images/velvet_nav_inline_nav.jpg)
 
 
 
-**<font style="color:#008000;">Fig 2.a.</font>** Preview the Ad Data
+<b><font style="color:#008000;">Fig 2.a.</b>Preview the Ad Data
 
-<div style="margin-left: 60px">As with <font style="color:red;"><strong>Fig 1.2</strong></font> the icon will appear active only when a creative (HTML) has been uploaded</div>
+As with <b>Fig 1.2</b> the icon will appear active only when a creative (HTML) has been uploaded
 <br>
 
-**<font style="color:#008000;">Fig 2.b.</font>** Generate Statics
+<b><font style="color:#008000;">Fig 2.b.</b>Generate Statics
 
-<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_capture_static.jpg" /> the camera will appear active as long as the uploaded creative has the feature selected<br><img width=413 src="images/velvet_nav_enable_static.jpg" /></div>
+<img width=46 src="images/velvet_nav_capture_static.jpg" /> the camera will appear active as long as the uploaded creative has the feature selected<br><img width=413 src="images/velvet_nav_enable_static.jpg" />
 <br>
 
-**<font style="color:#008000;">Fig 2.c.</font>** Generate Videos
+<b><font style="color:#008000;">Fig 2.c.</b>Generate Videos
 
-<div style="margin-left: 60px">Like statics, the icon's activity is dependant on if the creative has the feature selected<br><img width=413 src="images/velvet_nav_enable_video.jpg" /></div>
+Like statics, the icon's activity is dependant on if the creative has the feature selected<br><img width=413 src="images/velvet_nav_enable_video.jpg" />
 <br>
 
-**<font style="color:#008000;">Fig 2.d.</font>** URLs - the slug, preview paths, and live paths used by the current item (Segment or Ad Data)
+<b><font style="color:#008000;">Fig 2.d.</b>URLs - the slug, preview paths, and live paths used by the current item (Segment or Ad Data)
 
-**<font style="color:#008000;">Fig 2.e.</font>** Edit the item
+<b><font style="color:#008000;">Fig 2.e.</b>Edit the item
 
-**<font style="color:#008000;">Fig 2.f.</font>** Clone - make a duplicate of the content (Locale, Template, Ad Data) that will be independent from its original version
+<b><font style="color:#008000;">Fig 2.f.</b>Clone - make a duplicate of the content (Locale, Template, Ad Data) that will be independent from its original version
 
-**<font style="color:#008000;">Fig 2.g.</font>** Archive the item
+<b><font style="color:#008000;">Fig 2.g.</b>Archive the item
 
-**<font style="color:#008000;">Fig 2.h.</font>** Approve content (must be approved before being published)
+<b><font style="color:#008000;">Fig 2.h.</b>Approve content (must be approved before being published)
 
-<div style="margin-left: 60px"><img width=46 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the <font style=""><strong>Locale</strong></font> level (<font style="color:red;"><strong> Fig 1.C.</strong></font> or <font style="color:magenta;"><strong>Fig 1.d.1</strong></font>)</div>
+<img width=46 src="images/velvet_nav_publish.jpg" /> Publishing occurs at the <font style=""><b>Locale</b> level (<b> Fig 1.C.</b> or <b>Fig 1.d.1</b>)
