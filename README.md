@@ -234,7 +234,7 @@ Ad Data from Velvet is JSON. An example looks like:
 
 In which case, queries for data would look like:
 
-![Screenshot](console_data.jpg)
+![Screenshot](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/console_data.jpg)
 
 For more advanced queries, check out the [API](#api) section.
 
