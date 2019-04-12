@@ -6,17 +6,17 @@ Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logi
 
 
 
-**<font style="color:red;">Fig 1.A.</font>** (*Client name*) or **<font style="color:magenta;">Fig 1.b.1</font>** - Return to the root Campaigns menu containing all available campaigns for the client
+**<font style="color:red;">Fig 1.A.</font>** (*Client name*) or **<font style="color:magenta;">Fig 1.b.1</font>** - Return to the root **Campaigns** menu containing all available **Campaigns** for the client
 
 <div style="margin-left: 60px"><img width=728 src="images/velvet_nav_campaigns.jpg" /></div>
 <br>
 
-**<font style="color:red;">Fig 1.B.</font>** (*Campaign name*) or **<font style="color:magenta;">Fig 1.c.1</font>** - Return to the root level of the Campaign, which has that Campaign's Locale, Template, and Creative information
+**<font style="color:red;">Fig 1.B.</font>** (*Campaign name*) or **<font style="color:magenta;">Fig 1.c.1</font>** - Return to the root level of the **Campaign**, which has that **Campaign**'s **Locale**, **Template**, and **Creative** information
 
 <div style="margin-left: 60px"><img width=728 src="images/velvet_nav_campaign_locales.jpg" /></div>
 <br>
 
-**<font style="color:red;">Fig 1.C.</font>** (*Locale name*) or **<font style="color:magenta;">Fig 1.d.1</font>** - Return to the root level of that Locale, which has that campaigns AdData and segments
+**<font style="color:red;">Fig 1.C.</font>** (*Locale name*) or **<font style="color:magenta;">Fig 1.d.1</font>** - Return to the root level of that **Locale**, which has that **Campaign**'s **Ad Data** and **Segments**
 
 <div style="margin-left: 60px"><img width=728 src="images/velvet_nav_locales.jpg" /></div>
 <br>
@@ -56,7 +56,7 @@ Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logi
 
 **<font style="color:blue;">Fig 1.7.</font>** Edit Template - go to the template assigned to this Ad Data's locale and adjust as needed
 
-**<font style="color:blue;">Fig 1.8.</font>** Reset the current content
+**<font style="color:blue;">Fig 1.8.</font>** Reset the current <span style="color:red;">content</span>
 
 **<font style="color:blue;">Fig 1.9.</font>** Save the current content (**Ad Data** / **Segment** / **Time Block** / **Creative** / **Campaign** / **Template**)
 
@@ -64,7 +64,7 @@ Whether looking at Ad Data or Segments or Locales or Time Blocks, the basic logi
 
 Many of these functions from <font style="color:blue;"><strong>Fig 1.1</strong></font> - <font style="color:blue;"><strong>Fig 1.9</strong></font> are also also available inline for each item listed per **Locale**, **Segment**, or **Ad Data**.
 Sometimes icons such, as <font style="color:blue;"><strong>Fig 1.6</strong></font>'s URLs icon, for a page and not part of the list.
-This happens when the list item - such as a Time Block - doesn't have unique URL information
+This happens when the list item - such as a **Time Block** - doesn't have unique URL information
 
 <br>
 <br>
