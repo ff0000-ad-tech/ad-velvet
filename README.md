@@ -278,7 +278,7 @@ Programatic advertising enables Brands to reach their demographics with specific
 
 Building out ads for all of those targets can be an exhausting process, due to the terrific amount of redundancy, asset management and delivery juggling. It's often preferable to build a _dynamic_ unit that can account for many targets in one shot.
 
-Content Management Platforms (CMP's) are the mechanism that help brand managers organize this volume, while reducing the number of builds necessary to produce those targets. Some popular options are:
+Content Management Platforms (CMPs) are the mechanism that help brand managers organize this volume, while reducing the number of builds necessary to produce those targets. Some popular options are:
 
 -   DoubleClick Studio (Google Dynamic Content)
 -   Flashtalking
