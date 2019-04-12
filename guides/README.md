@@ -5,5 +5,5 @@
 
 ### Here's how to address those
 
-[Velvet Navigation](./01_navigation/ "Velvet Navigation")<br>
-[Common Problems (and Solutions!)](./02_common_problems/ "Common Problems (and Solutions!)")
+[Velvet Navigation](./README_NAV.md/ "Velvet Navigation")<br>
+[Common Problems (and Solutions!)](./README_COMMON_PROBLEMS.md "Common Problems (and Solutions!)")
