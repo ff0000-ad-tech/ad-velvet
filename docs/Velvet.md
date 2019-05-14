@@ -6,18 +6,17 @@
 
 * [.Velvet](#Velvet)
     * [new Velvet()](#new_Velvet_new)
-    * [.capture](#Velvet.capture)
-        * [new capture()](#new_Velvet.capture_new)
-        * [.schedule(schedule)](#Velvet.capture.schedule)
-        * [.addCustomData(obj)](#Velvet.capture.addCustomData)
-        * [.dispatchData()](#Velvet.capture.dispatchData)
-        * [.dispatchSchedule()](#Velvet.capture.dispatchSchedule)
-        * [.dispatchStart()](#Velvet.capture.dispatchStart) ⇒ <code>Promise</code>
     * [.events](#Velvet.events)
         * [new events()](#new_Velvet.events_new)
         * [.INIT](#Velvet.events.INIT) : <code>string</code>
         * [.FAIL](#Velvet.events.FAIL) : <code>string</code>
         * [.STATIC](#Velvet.events.STATIC) : <code>string</code>
+    * [.capture](#Velvet.capture)
+        * [.schedule(schedule)](#Velvet.capture.schedule)
+        * [.addCustomData(obj)](#Velvet.capture.addCustomData)
+        * [.dispatchData()](#Velvet.capture.dispatchData)
+        * [.dispatchSchedule()](#Velvet.capture.dispatchSchedule)
+        * [.dispatchStart()](#Velvet.capture.dispatchStart) ⇒ <code>Promise</code>
     * [.init(slugs, dateSettings, adDimensions, adElement)](#Velvet.init)
     * [.isPreviewLocation()](#Velvet.isPreviewLocation)
     * [.convertBreaks(str)](#Velvet.convertBreaks)
@@ -45,22 +44,57 @@ velvetCaptureRotate=1	// rotates the top level DOM -90 degrees to allow for larg
 velvetCaptureSlates=1	// shows color slates for accuracy with Capture video
 </pre>
 
+<a name="Velvet.events"></a>
+
+### Velvet.events
+**Kind**: static class of [<code>Velvet</code>](#Velvet)  
+
+* [.events](#Velvet.events)
+    * [new events()](#new_Velvet.events_new)
+    * [.INIT](#Velvet.events.INIT) : <code>string</code>
+    * [.FAIL](#Velvet.events.FAIL) : <code>string</code>
+    * [.STATIC](#Velvet.events.STATIC) : <code>string</code>
+
+<a name="new_Velvet.events_new"></a>
+
+#### new events()
+<a href="https://github.com/ff0000-ad-tech/ad-velvet">Github repo</a>
+	<br><br>
+	This module has custom events to be used with [Velvet](#Velvet)
+
+<a name="Velvet.events.INIT"></a>
+
+#### events.INIT : <code>string</code>
+Represents a 'velvetInit', fired when Velvet has completed its data load.
+
+**Kind**: static constant of [<code>events</code>](#Velvet.events)  
+**Example**  
+```js
+Velvet.events.INIT
+```
+<a name="Velvet.events.FAIL"></a>
+
+#### events.FAIL : <code>string</code>
+Represents a 'velvetFail', fired if Velvet has a fail during its load.
+
+**Kind**: static constant of [<code>events</code>](#Velvet.events)  
+**Example**  
+```js
+Velvet.events.FAIL
+```
+<a name="Velvet.events.STATIC"></a>
+
+#### events.STATIC : <code>string</code>
+Represents a 'velvetStatic', fired when the ad_rotation in the loaded segment JSON has USE_STATIC rather than an addata slug.
+
+**Kind**: static constant of [<code>events</code>](#Velvet.events)  
+**Example**  
+```js
+Velvet.events.STATIC
+```
 <a name="Velvet.capture"></a>
 
 ### Velvet.capture
-**Kind**: static class of [<code>Velvet</code>](#Velvet)  
-
-* [.capture](#Velvet.capture)
-    * [new capture()](#new_Velvet.capture_new)
-    * [.schedule(schedule)](#Velvet.capture.schedule)
-    * [.addCustomData(obj)](#Velvet.capture.addCustomData)
-    * [.dispatchData()](#Velvet.capture.dispatchData)
-    * [.dispatchSchedule()](#Velvet.capture.dispatchSchedule)
-    * [.dispatchStart()](#Velvet.capture.dispatchStart) ⇒ <code>Promise</code>
-
-<a name="new_Velvet.capture_new"></a>
-
-#### new capture()
 This class controls the communication with the backend to enable static snap shots of the ad's endframe,
 including the ability to take a shot of every date for a unit with a DateSchedule determining its messaging.
 <pre class="sunlight-highlight-javascript">
@@ -103,6 +137,15 @@ this.animationComplete = function() {
 // then from the end of the animation, call
 Control.animationComplete()
 </pre>
+
+**Kind**: static property of [<code>Velvet</code>](#Velvet)  
+
+* [.capture](#Velvet.capture)
+    * [.schedule(schedule)](#Velvet.capture.schedule)
+    * [.addCustomData(obj)](#Velvet.capture.addCustomData)
+    * [.dispatchData()](#Velvet.capture.dispatchData)
+    * [.dispatchSchedule()](#Velvet.capture.dispatchSchedule)
+    * [.dispatchStart()](#Velvet.capture.dispatchStart) ⇒ <code>Promise</code>
 
 <a name="Velvet.capture.schedule"></a>
 
@@ -155,54 +198,6 @@ Calls back to the server to start video capture. This must be called at the star
 Velvet.capture.adStart().then(() => {
 	// do ad animation
 })
-```
-<a name="Velvet.events"></a>
-
-### Velvet.events
-**Kind**: static class of [<code>Velvet</code>](#Velvet)  
-
-* [.events](#Velvet.events)
-    * [new events()](#new_Velvet.events_new)
-    * [.INIT](#Velvet.events.INIT) : <code>string</code>
-    * [.FAIL](#Velvet.events.FAIL) : <code>string</code>
-    * [.STATIC](#Velvet.events.STATIC) : <code>string</code>
-
-<a name="new_Velvet.events_new"></a>
-
-#### new events()
-<a href="https://github.com/ff0000-ad-tech/ad-velvet">Github repo</a>
-	<br><br>
-	This module has custom events to be used with [Velvet](#Velvet)
-
-<a name="Velvet.events.INIT"></a>
-
-#### events.INIT : <code>string</code>
-Represents a 'velvetInit', fired when Velvet has completed its data load.
-
-**Kind**: static constant of [<code>events</code>](#Velvet.events)  
-**Example**  
-```js
-Velvet.events.INIT
-```
-<a name="Velvet.events.FAIL"></a>
-
-#### events.FAIL : <code>string</code>
-Represents a 'velvetFail', fired if Velvet has a fail during its load.
-
-**Kind**: static constant of [<code>events</code>](#Velvet.events)  
-**Example**  
-```js
-Velvet.events.FAIL
-```
-<a name="Velvet.events.STATIC"></a>
-
-#### events.STATIC : <code>string</code>
-Represents a 'velvetStatic', fired when the ad_rotation in the loaded segment JSON has USE_STATIC rather than an addata slug.
-
-**Kind**: static constant of [<code>events</code>](#Velvet.events)  
-**Example**  
-```js
-Velvet.events.STATIC
 ```
 <a name="Velvet.init"></a>
 

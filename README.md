@@ -301,22 +301,21 @@ There are many others. How is Velvet different?
 
 # API
 
-## <a name="Velvet.capture" href="./docs/Velvet.capture.md">Velvet.capture</a>
-* <a href="./docs/Velvet.md#Velvet.capture.schedule">.schedule(schedule)</a>
-* <a href="./docs/Velvet.md#Velvet.capture.addCustomData">.addCustomData(obj)</a>
-* <a href="./docs/Velvet.md#Velvet.capture.dispatchData">.dispatchData()</a>
-* <a href="./docs/Velvet.md#Velvet.capture.dispatchSchedule">.dispatchSchedule()</a>
-* <a href="./docs/Velvet.md#Velvet.capture.dispatchStart">.dispatchStart()</a> ⇒ <code>Promise</code>
 ## <a name="Velvet" href="./docs/Velvet.md">Velvet</a>
-* new Velvet()
+* <a href="./docs/Velvet.md#Velvet.capture">.capture</a>
+    * <a href="./docs/Velvet.md#Velvet.capture.schedule">.schedule(schedule)</a>
+    * <a href="./docs/Velvet.md#Velvet.capture.addCustomData">.addCustomData(obj)</a>
+    * <a href="./docs/Velvet.md#Velvet.capture.dispatchData">.dispatchData()</a>
+    * <a href="./docs/Velvet.md#Velvet.capture.dispatchSchedule">.dispatchSchedule()</a>
+    * <a href="./docs/Velvet.md#Velvet.capture.dispatchStart">.dispatchStart()</a> ⇒ <code>Promise</code>
+* <a href="./docs/Velvet.md#Velvet.events">.events</a>
+    * <a href="./docs/Velvet.md#Velvet.events.INIT">.INIT</a> : <code>string</code>
+    * <a href="./docs/Velvet.md#Velvet.events.FAIL">.FAIL</a> : <code>string</code>
+    * <a href="./docs/Velvet.md#Velvet.events.STATIC">.STATIC</a> : <code>string</code>
 * <a href="./docs/Velvet.md#Velvet.init">.init(slugs, dateSettings, adDimensions, adElement)</a>
 * <a href="./docs/Velvet.md#Velvet.isPreviewLocation">.isPreviewLocation()</a>
 * <a href="./docs/Velvet.md#Velvet.convertBreaks">.convertBreaks(str)</a>
 * <a href="./docs/Velvet.md#Velvet.get">.get(arguments)</a>
-## <a name="Velvet.events" href="./docs/Velvet.events.md">Velvet.events</a>
-* <a href="./docs/Velvet.md#Velvet.events.INIT">.INIT</a> : <code>string</code>
-* <a href="./docs/Velvet.md#Velvet.events.FAIL">.FAIL</a> : <code>string</code>
-* <a href="./docs/Velvet.md#Velvet.events.STATIC">.STATIC</a> : <code>string</code>
 
 
 * * *

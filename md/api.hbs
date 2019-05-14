@@ -1,11 +1,6 @@
-{{#classes}}
+{{#namespace}}
 {{>header}}
 {{#groupBy (option "group-by")~}}
-{{#if ('&&'
-    ('!==' name "capture")
-    ('!==' name "events")
-)}}
 {{>member-index-grouped}}
-{{/if}}
 {{/groupBy~}}
-{{/classes}}
+{{/namespace}}
