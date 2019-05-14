@@ -1,16 +1,3 @@
-##### RED Interactive Agency - Ad Technology
-
-[![npm (tag)](https://img.shields.io/npm/v/@ff0000-ad-tech%2Fad-velvet.svg?style=flat-square)](https://www.npmjs.com/package/@ff0000-ad-tech%2Fad-velvet)
-[![GitHub issues](https://img.shields.io/github/issues/ff0000-ad-tech/ad-velvet.svg?style=flat-square)](https://github.com/ff0000-ad-tech/ad-velvet)
-[![npm downloads](https://img.shields.io/npm/dm/@ff0000-ad-tech%2Fad-velvet.svg?style=flat-square)](https://www.npmjs.com/package/@ff0000-ad-tech%2Fad-velvet)
-
-[![GitHub contributors](https://img.shields.io/github/contributors/ff0000-ad-tech/ad-velvet.svg?style=flat-square)](https://github.com/ff0000-ad-tech/ad-velvet/graphs/contributors/)
-[![GitHub commit-activity](https://img.shields.io/github/commit-activity/y/ff0000-ad-tech/ad-velvet.svg?style=flat-square)](https://github.com/ff0000-ad-tech/ad-velvet/commits/master)
-[![npm license](https://img.shields.io/npm/l/@ff0000-ad-tech%2Fad-velvet.svg?style=flat-square)](https://github.com/ff0000-ad-tech/ad-velvet/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-* * *
-
 [Getting Started](#getting-started)
 
 [Guides](#guides)
@@ -21,7 +8,7 @@
 
 [API](#api)
 
-## ![Velvet Logo](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-logo.png)
+## ![Velvet Logo](https://github.com/ff0000-ad-tech/ad-docs/blob/master/assets/ad-velvet/velvet-logo.png)
 
 The Velvet Platform is a licensable, web-based, CMP living at https://www.velvet.tech/. It manages data which is then requested & consumed by ad units, depending on their placement / schedule / target.
 
@@ -108,9 +95,9 @@ Slugs are codes used by your ad to identify Velvet data. They correspond to:
 
 In Velvet, go to `CAMPAIGN` > `LOCALE` > `SEGMENTS`. Select the `JSON URLs` icon to get a pop-up. In the window will be a Slugs object. Copy and paste that into your ad's `Velvet.init(__slugs-object__)`.
 
-![Velvet Slug Route](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-slug-route.png)
+![Velvet Slug Route](https://github.com/ff0000-ad-tech/ad-docs/blob/master/assets/ad-velvet/velvet-slug-route.png)
 
-![Velvet Slugs](https://github.com/ff0000-ad-tech/readme-assets/blob/master/ad-velvet/velvet-slugs.png)
+![Velvet Slugs](https://github.com/ff0000-ad-tech/ad-docs/blob/master/assets/ad-velvet/velvet-slugs.png)
 
 ##### Client & Locale
 
@@ -237,7 +224,7 @@ Ad Data from Velvet is JSON. An example looks like:
 
 In which case, queries for data would look like:
 
-![Screenshot](console_data.jpg)
+![Screenshot](https://github.com/ff0000-ad-tech/ad-docs/blob/master/assets/ad-velvet/console_data.jpg)
 
 For more advanced queries, check out the [API](#api) section.
 
@@ -301,21 +288,6 @@ There are many others. How is Velvet different?
 
 # API
 
-## <a name="Velvet" href="./docs/Velvet.md">Velvet</a>
-* <a href="./docs/Velvet.md#Velvet.capture">.capture</a>
-    * <a href="./docs/Velvet.md#Velvet.capture.schedule">.schedule(schedule)</a>
-    * <a href="./docs/Velvet.md#Velvet.capture.addCustomData">.addCustomData(obj)</a>
-    * <a href="./docs/Velvet.md#Velvet.capture.dispatchData">.dispatchData()</a>
-    * <a href="./docs/Velvet.md#Velvet.capture.dispatchSchedule">.dispatchSchedule()</a>
-    * <a href="./docs/Velvet.md#Velvet.capture.dispatchStart">.dispatchStart()</a> ⇒ <code>Promise</code>
-* <a href="./docs/Velvet.md#Velvet.events">.events</a>
-    * <a href="./docs/Velvet.md#Velvet.events.INIT">.INIT</a> : <code>string</code>
-    * <a href="./docs/Velvet.md#Velvet.events.FAIL">.FAIL</a> : <code>string</code>
-    * <a href="./docs/Velvet.md#Velvet.events.STATIC">.STATIC</a> : <code>string</code>
-* <a href="./docs/Velvet.md#Velvet.init">.init(slugs, dateSettings, adDimensions, adElement)</a>
-* <a href="./docs/Velvet.md#Velvet.isPreviewLocation">.isPreviewLocation()</a>
-* <a href="./docs/Velvet.md#Velvet.convertBreaks">.convertBreaks(str)</a>
-* <a href="./docs/Velvet.md#Velvet.get">.get(arguments)</a>
-
+{{api}}
 
 * * *
