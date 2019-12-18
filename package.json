@@ -39,10 +39,10 @@
 		"jsdoc-to-markdown": "^4.0.1"
 	},
 	"devDependencies": {
-		"@ff0000-ad-tech/webpack-rollup-babel-loader": "latest",
+		"@ff0000-ad-tech/webpack-rollup-babel-loader": "^1.0.1",
 		"@ff0000-ad-tech/wp-deploy-manager": "^2.0.7",
 		"@ff0000-ad-tech/wp-plugin-index": "^1.0.9",
-		"@ff0000-ad-tech/wp-plugin-payload": "latest",
+		"@ff0000-ad-tech/wp-plugin-payload": "^2.0.1",
 		"babel-eslint": "^8.2.2",
 		"babel-loader": "^7.1.4",
 		"babel-preset-env": "^1.7.0",
