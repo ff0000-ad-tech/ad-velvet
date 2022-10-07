@@ -12,4 +12,5 @@ export const removeEventListener = EC.remove
 export const events = E
 export const capture = C
 export const get = G
+export const flatten = DM.flatten
 export const convertBreaks = F.convertBreaks
